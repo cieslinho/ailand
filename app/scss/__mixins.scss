@@ -1,0 +1,61 @@
+@mixin respond($breakpoint) {
+	@if $breakpoint == mobile {
+		@media only screen and (min-width: 360px) {
+			@content;
+		}
+	}
+	@if $breakpoint == mobile-max {
+		@media only screen and (min-width: 568px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet {
+		@media only screen and (min-width: 768px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet-xl {
+		@media only screen and (min-width: 992px) {
+			@content;
+		}
+	}
+	@if $breakpoint == desktop-small {
+		@media only screen and (min-width: 1024px) {
+			@content;
+		}
+	}
+	@if $breakpoint == desktop {
+		@media only screen and (min-width: 1230px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == desktop-large {
+		@media only screen and (min-width: 1440px) {
+			@content;
+		}
+	}
+}
+
+@mixin section-padding {
+	padding: 2em 1em;
+
+	@include respond(tablet) {
+		padding: 3em 1em;
+	}
+}
+
+@mixin section-padding-block {
+	padding-block: 2em;
+
+	@include respond(tablet) {
+		padding-block: 3em;
+	}
+}
+
+@mixin container {
+	margin: 0 auto;
+	padding: 0 1em;
+	width: 100%;
+	max-width: 1600px;
+}
