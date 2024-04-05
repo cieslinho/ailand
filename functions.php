@@ -33,7 +33,10 @@ function ailand_config(){
   register_nav_menus(
     array(
   'ailand_main_menu' => 'ailand Main Menu',
-  'ailand_footer_menu' => 'ailand Footer Menu',
+  'ailand_mobile_menu' => 'ailand Mobile Menu',
+  'ailand_footer_info_menu' => 'ailand Footer Info Menu',
+  'ailand_footer_shop_menu' => 'ailand Footer Shop Menu',
+  'ailand_footer_plastics_menu' => 'ailand Footer Plastics Menu',
     )
   );
 }
@@ -72,10 +75,13 @@ add_theme_support('post-thumbnails', array(
   
     function li_menu_class($classes, $item, $args) {
       if($args->theme_location == 'ailand_main_menu') {
-        $classes[] = 'nav__menu-item';
+        $classes[] = 'nav__item';
       }
-      if($args->theme_location == 'ailand_footer_menu') {
-        $classes[] = 'footer__menu-item';
+      if($args->theme_location == 'ailand_mobile_menu') {
+        $classes[] = 'nav__item';
+      }
+      if($args->theme_location == 'ailand_footer_info_menu') {
+        $classes[] = 'footer__item';
       }
       return $classes;
     }
@@ -101,3 +107,50 @@ return $classes;
 }
 
   
+function custom_breadcrumb() {
+	global $post;
+	if ( ! is_home() ) {
+		echo '<a class="breadcrumbs-parent" href="' . site_url() . '">Strona Główna</a> > ';
+		if ( is_category() || is_single() ) {
+			the_category( ' / ' );
+			if ( is_single() ) {
+				echo ' / ';
+				the_title();
+			}
+		} elseif ( is_page() ) {
+			if ( $post->post_parent ) {
+				$anc   = get_post_ancestors( $post->ID );
+				$title = get_the_title();
+				foreach ( $anc as $ancestor ) {
+					$output = '<a class="breadcrumbs-parent" href="' . get_permalink( $ancestor ) . '" title="' . get_the_title( $ancestor ) . '">' . get_the_title( $ancestor ) . '</a> > ';
+				}
+				echo $output;
+				echo $title;
+			} else {
+				echo '<p class="breadcrumbs-active">' . get_the_title() . '</p>';
+			}
+		}
+	}
+}
+
+function enable_svg_upload( $upload_mimes ) {
+
+
+
+  $upload_mimes['svg'] = 'image/svg+xml';
+
+
+
+  $upload_mimes['svgz'] = 'image/svg+xml';
+
+
+
+  return $upload_mimes;
+
+
+}
+
+
+
+
+add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );

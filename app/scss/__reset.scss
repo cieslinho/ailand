@@ -1,3 +1,18 @@
+@font-face {
+	src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+	font-family: '500';
+}
+
+@font-face {
+	src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+	font-family: '400';
+}
+
+@font-face {
+	src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-family: '600';
+}
+
 *,
 *::after,
 *::before {
@@ -18,8 +33,7 @@
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
 	display: block;
 	max-width: 100%;
 }
@@ -41,8 +55,10 @@ button {
 html {
 	scroll-behavior: smooth;
 	font-size: 62.5%;
+	font-family: '400', Arial, sans-serif;
 }
 
 body {
+	color: $text;
 	font-size: 1.6rem;
 }

@@ -1,0 +1,83 @@
+.header {
+	@include respond(tablet) {
+		margin-top: 100px;
+	}
+
+	@include padding-block;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		@include respond(tablet) {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+
+		@include respond(tablet) {
+			align-items: flex-start;
+		}
+	}
+
+	&__title {
+		line-height: 44.8px;
+		font-family: '600';
+
+		@include respond(tablet) {
+			font-size: 4.8rem;
+			line-height: 57.6px;
+		}
+	}
+
+	&__description {
+		line-height: 22.4px;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+			line-height: 25.2px;
+		}
+	}
+
+	&__link {
+		border: 2px solid transparent;
+		border-radius: 8px;
+		background-color: $blood;
+		padding: 0.79em;
+		color: $white;
+		font-family: '600';
+		text-align: center;
+
+		@include respond(tablet) {
+			margin-top: 1em;
+			padding: 0.79em 4.2em;
+		}
+
+		&--white {
+			border: 2px solid $blood;
+			background-color: $white;
+			color: $blood;
+
+			@include respond(tablet) {
+				display: none;
+			}
+		}
+	}
+
+	&__img {
+		width: 100%;
+		max-width: 328px;
+
+		@include respond(tablet) {
+			max-width: 622px;
+		}
+	}
+}

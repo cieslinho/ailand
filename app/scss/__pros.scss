@@ -1,0 +1,108 @@
+.pros {
+	@include padding-block;
+	background-color: $gray;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		@include respond(tablet) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include respond(desktop) {
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__box {
+		&--mobile {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+
+			@include respond(tablet) {
+				display: none;
+			}
+		}
+
+		&--desktop {
+			display: none;
+
+			@include respond(tablet) {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 1em;
+				border: 2px solid $blood;
+				border-radius: 8px;
+				background-color: rgba($color: $blood, $alpha: 5%);
+				padding: 3.4em 1em;
+				text-align: center;
+			}
+		}
+	}
+
+	&__icon {
+		border-radius: 0px 8px 8px 0px;
+		background-color: rgba($color: $blood, $alpha: 10%);
+		padding: 1.8em 1.3em;
+
+		svg {
+			fill: $blood;
+			width: 28px;
+			height: 28px;
+
+			@include respond(tablet) {
+				width: 64px;
+				height: 64px;
+			}
+		}
+
+		@include respond(tablet) {
+			background-color: unset;
+			padding: 0;
+		}
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1em;
+
+		@include respond(tablet) {
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+		}
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		line-height: 19.2px;
+		font-family: '600';
+
+		@include respond(tablet) {
+			font-size: 2.4rem;
+			line-height: 33.6px;
+			font-family: '500';
+		}
+	}
+
+	&__description {
+		font-size: 1.4rem;
+		line-height: 19.6px;
+		font-family: '400';
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+			line-height: 25.2px;
+		}
+	}
+
+	&__link {
+		color: $black;
+	}
+}

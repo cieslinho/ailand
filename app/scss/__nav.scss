@@ -1,0 +1,248 @@
+.nav {
+	// background-color: $white;
+	// max-width: 1600px;
+	&--desktop {
+		display: none;
+
+		@include respond(tablet-xl) {
+			display: block;
+			margin: 0 auto;
+			background-color: $white;
+			// padding: 0 0.5em;
+			width: 100%;
+			max-width: 1600px;
+		}
+	}
+
+	&--mobile {
+		@include respond(tablet-xl) {
+			display: none;
+		}
+	}
+
+	.logo-mobile {
+		width: 48px;
+	}
+
+	.logo-desktop {
+		width: 128px;
+	}
+
+	&__logo {
+		@include respond(tablet-xl) {
+			margin-right: 4em;
+		}
+	}
+
+	&__mobile {
+		background-color: $white;
+	}
+
+	&__desktop {
+		display: flex;
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+		margin-left: 4em;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 20;
+		box-shadow: 0px 2px 12px 0px rgba($color: $black, $alpha: 10%);
+		background-color: $white;
+		padding: 1.5em;
+	}
+
+	&__bottom {
+		display: flex;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		justify-content: center;
+		gap: 1em;
+		opacity: 1;
+		z-index: 30;
+		transition: transform 0.3s, opacity 0.3s;
+		box-shadow: 0px -2px 12px 0px rgba($color: $black, $alpha: 10%);
+		background-color: $white;
+		padding: 0.4em;
+		width: 100%;
+		font-family: '500';
+		text-align: center;
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.1em;
+			cursor: pointer;
+			padding: 0.7em;
+			color: $text;
+			font-size: 1.1rem;
+			img {
+				width: 25px;
+			}
+		}
+	}
+
+	&__bottom.hidden {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+
+	&__navbar {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 0;
+		flex-direction: column;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 200000;
+		transition: opacity 0.3s, visibility 0.3s;
+		background-color: $gray;
+		width: 100%;
+		height: 100%;
+		overflow: scroll;
+
+		@include respond(tablet-xl) {
+			display: flex;
+			position: fixed;
+			top: 0;
+			left: 0;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			visibility: visible;
+			opacity: 1;
+			box-shadow: 0px 2px 12px 0px rgba($color: $black, $alpha: 10%);
+			background-color: $white;
+			padding: 1.5em 0.5em;
+			width: 100%;
+			height: inherit;
+			overflow: inherit;
+		}
+	}
+
+	&__navbar.active {
+		visibility: visible;
+		opacity: 1;
+		z-index: 50;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+		background-color: $white;
+		font-size: 1.6rem;
+		font-family: '600';
+	}
+
+	&__btn {
+		background-color: $white;
+		padding: 0.9em 1.2em;
+		color: $text;
+	}
+
+	&__link {
+		display: block;
+		transition: background-color 0.3s;
+		border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+		background-color: $white;
+		padding: 0.9em 1.2em;
+		color: $text;
+		font-family: '500';
+
+		@include respond(tablet-xl) {
+			// margin: 0 0.8em;
+			border: unset;
+			padding: 1em 1.5em;
+			font-size: 1.4rem;
+		}
+	}
+
+	&__shop {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		color: $blood;
+
+		svg {
+			fill: $blood;
+		}
+	}
+
+	&__item {
+		.sub-menu {
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0.3s, opacity 0.3s, height 0.3s;
+			height: 0;
+			max-height: 0;
+
+			.nav__link {
+				padding-left: 2em;
+			}
+		}
+
+		.sub-menu.active {
+			visibility: visible;
+			opacity: 1;
+
+			height: 100%;
+			max-height: 100%;
+		}
+
+		&:hover .nav__link {
+			background-color: $gray;
+			color: $black;
+		}
+	}
+
+	#menu-item-29 > a {
+		position: relative;
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			transform: translateY(-50%);
+			width: 20px;
+			height: 20px;
+			content: url('../images/icons/arrow.svg');
+		}
+	}
+
+	#menu-item-21 {
+		position: relative;
+
+		.sub-menu {
+			display: flex;
+			position: absolute;
+			top: 45px;
+			left: 0;
+			flex-direction: column;
+			background-color: $gray;
+			width: 230px;
+			height: inherit;
+			max-height: inherit;
+
+			.nav__link {
+				margin: 0;
+				background-color: $gray;
+			}
+		}
+
+		&:hover {
+			.sub-menu {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}

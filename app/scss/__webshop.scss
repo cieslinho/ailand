@@ -1,0 +1,10 @@
+.webshop {
+	@include padding-block;
+
+	.btn {
+		@include respond(tablet) {
+			width: 100%;
+			max-width: 328px;
+		}
+	}
+}

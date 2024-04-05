@@ -45,8 +45,8 @@
 	}
 }
 
-@mixin section-padding-block {
-	padding-block: 2em;
+@mixin padding-block {
+	padding-block: 1.7em;
 
 	@include respond(tablet) {
 		padding-block: 3em;

@@ -1,0 +1,39 @@
+.partners {
+	// @include padding-block;
+	padding-bottom: 1em;
+
+	&__swiper {
+		padding: 0 1em;
+	}
+
+	&__wrapper {
+		align-items: center;
+		// padding: 0 2em;
+	}
+
+	&__slide {
+		opacity: 0.6;
+		width: 100%;
+		// object-fit: contain;
+		// width: 128px !important;
+		object-fit: cover;
+	}
+
+	&__box {
+		position: relative;
+	}
+
+	&__text {
+		margin-bottom: 1em;
+		font-size: 1.2rem;
+		line-height: 16.8px;
+		font-family: '600';
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 1.2rem;
+			line-height: 14.4px;
+			font-family: '400';
+		}
+	}
+}
