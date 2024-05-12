@@ -4,6 +4,8 @@ const btnOpen = document.querySelector('.nav__open')
 const closeBtn = document.querySelector('.nav__close')
 const subItem = document.querySelector('#menu-item-29')
 const subMenu = document.querySelector('.sub-menu')
+const tabs = document.querySelectorAll('.tab')
+const tabsBtn = document.querySelectorAll('.tabs-btn')
 
 // window.onscroll = function () {
 // 	// pageYOffset or scrollY
@@ -65,6 +67,131 @@ const swiper = new Swiper('.mySwiper', {
 		},
 	},
 })
+
+var prosSwiper = new Swiper('.pros__swiper', {
+	pagination: {
+		el: '.pros__pagination',
+	},
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		992: {
+			slidesPerView: 4,
+			spaceBetween: 20,
+			loop: false,
+			centeredSlides: false,
+		},
+	},
+})
+var supportSwiper = new Swiper('.support__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		992: {
+			slidesPerView: 4,
+			spaceBetween: 20,
+			loop: false,
+			centeredSlides: false,
+		},
+	},
+})
+var supportSwiper = new Swiper('.solutions__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		992: {
+			slidesPerView: 4,
+			spaceBetween: 20,
+			loop: false,
+			centeredSlides: false,
+		},
+	},
+})
+var supportSwiper = new Swiper('.example__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			loop: true,
+			// centeredSlides: true,
+		},
+		992: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+			loop: false,
+			centeredSlides: false,
+		},
+	},
+})
+
 const reviewsSwiper = new Swiper('.reviews__swiper', {
 	slidesPerView: 1,
 	spaceBetween: 20,
@@ -84,4 +211,72 @@ const reviewsSwiper = new Swiper('.reviews__swiper', {
 			spaceBetween: 20,
 		},
 	},
+})
+
+var materialsSwiper = new Swiper('.materials__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+	},
+})
+var featuredSwiper = new Swiper('.featured__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+	},
+})
+var pcvSwiper = new Swiper('.pcv__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	// centeredSlides: true,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		// disableOnInteraction: true,
+	},
+	breakpoints: {
+		568: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+	},
+})
+
+tabsBtn.forEach(btn => {
+	btn.addEventListener('click', () => {
+		btn.nextElementSibling.classList.toggle('active')
+		btn.classList.toggle('active')
+	})
 })

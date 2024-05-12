@@ -1,6 +1,7 @@
 .partners {
+	background-color: $gray;
 	// @include padding-block;
-	padding-bottom: 1em;
+	padding-block: 1em;
 
 	&__swiper {
 		padding: 0 1em;
@@ -12,7 +13,7 @@
 	}
 
 	&__slide {
-		opacity: 0.6;
+		opacity: 0.7;
 		width: 100%;
 		// object-fit: contain;
 		// width: 128px !important;

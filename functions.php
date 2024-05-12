@@ -39,16 +39,29 @@ function ailand_config(){
   'ailand_footer_plastics_menu' => 'ailand Footer Plastics Menu',
     )
   );
+  add_theme_support('woocommerce', array(
+    'thumbnails_image_width' => 300,
+    'single_image_width' => 800,
+    'product_grid' => array(
+      'default_rows' => 10,
+      'min_rows' => 1,
+      'max_rows' => 10,
+      'default_columns' => 1,
+      'min_columns' => 1,
+      'max_columns' => 5
+    )
+  ));
+  add_theme_support('wc-product-gallery-zoom');
+  add_theme_support('wc-product-gallery-lightbox');
+  add_theme_support('wc-product-gallery-slider');
 }
+
 
 add_action('after_setup_theme', 'ailand_config', 0);
 add_theme_support( 'title-tag' );
 
-add_theme_support('post-thumbnails', array(
-  'post',
-  'page',
-  'custom-post-type-name',
-  ));
+  
+
 
   function change_excerpt($excerpt) {
     return substr($excerpt, 0, 150) . '...';
@@ -154,3 +167,88 @@ function enable_svg_upload( $upload_mimes ) {
 
 
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
+
+
+add_action( 'woocommerce_after_order_notes', 'nip_checkout_field' );
+
+function nip_checkout_field( $checkout ) {
+
+    echo '<div id="nip_checkout_field"><h2>' . __('Dane do faktury') . '</h2>';
+
+    woocommerce_form_field( 'nip', array(
+        'type'          => 'text',
+        'class'         => array('nip-class form-row-wide'),
+        'label'         => __('Numer NIP'),
+        'placeholder'   => __('Wprowadź numer NIP'),
+        ), $checkout->get_value( 'nip' ));
+
+    echo '</div>';
+}
+
+add_action( 'woocommerce_checkout_update_order_meta', 'nip_checkout_field_update_order_meta' );
+
+function nip_checkout_field_update_order_meta( $order_id ) {
+    if ( ! empty( $_POST['nip'] ) ) {
+        update_post_meta( $order_id, 'NIP', sanitize_text_field( $_POST['nip'] ) );
+    }
+}
+
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'nip_checkout_field_display_admin_order_meta', 10, 1 );
+
+function nip_checkout_field_display_admin_order_meta($order){
+    echo '<p><strong>'.__('NIP').':</strong> ' . get_post_meta( $order->id, 'NIP', true ) . '</p>';
+}
+
+
+
+add_filter( 'woocommerce_product_tabs', '__return_empty_array', 98 );
+
+add_shortcode( 'product_reviews', 'product_reviews_shortcode' );
+
+function product_reviews_shortcode( $atts ) {
+    
+   if ( empty( $atts ) ) return '';
+ 
+   if ( ! isset( $atts['id'] ) ) return '';
+       
+   $comments = get_comments( 'post_id=' . $atts['id'] );
+   
+   $total_comments = count( $comments );
+   
+   if ( ! $comments ) return '';
+   
+   $total_rating = 0;
+
+   $html .= '<div class="woocommerce-tabs"><div id="reviews"><ol class="commentlist">';
+    
+   foreach ( $comments as $comment ) {   
+      $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
+      $total_rating = $total_rating + $rating;
+      $html .= '<li class="review">';
+      $html .= get_avatar( $comment, '60' );
+      $html .= '<div class="comment-text">';
+      if ( $rating ) $html .= wc_get_rating_html( $rating );
+      $html .= '<p class="meta"><strong class="woocommerce-review__author">';
+      $html .= get_comment_author( $comment );
+      $html .= '</strong></p>';
+      $html .= '<div class="description">';
+      $html .= $comment->comment_content;
+      $html .= '</div></div>';
+      $html .= '</li>';
+   }
+    
+   $html .= '</ol></div></div>';
+    
+    if( $total_rating > 0 ) {
+       $total_average = $total_rating / $total_comments;
+       $total_average =  number_format($total_average, 2, '.', '');
+    }
+
+   return $html;
+}
+
+
+function acf_wysiwyg_remove_wpautop() {
+  remove_filter('acf_the_content', 'wpautop' );
+}
+add_action('acf/init', 'acf_wysiwyg_remove_wpautop');

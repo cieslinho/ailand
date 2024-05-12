@@ -1,0 +1,17 @@
+.slogan {
+	&__offer {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1.5em;
+		color: $black;
+		font-size: 1.4rem;
+		line-height: 19.6px;
+		font-family: '600';
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+			line-height: 25.2px;
+		}
+	}
+}

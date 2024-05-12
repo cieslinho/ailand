@@ -1,0 +1,44 @@
+.category {
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		gap: 1em;
+
+		@include respond(tablet) {
+			flex-direction: row;
+		}
+		// overflow-x: scroll;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		// height: 360px;
+		gap: 0.5em;
+		border: 1px solid rgba($color: $black, $alpha: 8%);
+		border-radius: 8px;
+		padding: 1em 1.5em;
+		overflow: hidden;
+	}
+
+	&__img {
+		width: 100%;
+		max-width: 413px;
+	}
+
+	&__title {
+		color: $black;
+		font-size: 1.6rem;
+		line-height: 22.4px;
+		font-family: '600';
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 2.4rem;
+			line-height: 33.6px;
+		}
+	}
+}

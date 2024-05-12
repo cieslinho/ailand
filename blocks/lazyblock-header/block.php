@@ -7,8 +7,8 @@ progi drzwiowe,
 ramy okienne, HST</h1>
                 <p class="header__description">Produkujemy poszerzenia dla największych producentów stolarki okiennej w Polsce, dzięki nim, nasze wyroby dystrybuowane są do różnych krajów europy.</p>
                 <div class="section-buttons">
-                <a href="#" class="btn btn--red">Czytaj o poszerzeniach</a>
-                <a href="#" class="btn btn--white btn--mobile">Zadzwoń i porozmawiajmy</a>
+                <a href="#" class="btn btn--black btn--header">Poszerzenia dla firm</a>
+                <a href="#" class="btn btn--gray btn--header">Kup online</a>
                 </div>
             </div>
             <div class="header__right">

@@ -1,7 +1,7 @@
 <section class="reviews">
     <div class="container">
         <h2 class="section-title">
-            Jak nasi klienci oceniają współpracę z nami?
+        Jak klienci oceniają<br> współpracę z Al-Land Opole?
         </h2>
         <div class="reviews__swiper swiper">
             <div class="reviews__boxes reviews__wrapper swiper-wrapper">

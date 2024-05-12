@@ -1,6 +1,6 @@
 .reviews {
 	@include padding-block;
-	background-color: $gray;
+	// background-color: $gray;
 
 	&__swiper {
 		width: 100%;
@@ -12,7 +12,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 1em;
-		background-color: $white;
+		background-color: $gray;
 		padding: 1em 1.5em;
 		width: 100%;
 		// max-width: 259px;
@@ -22,8 +22,8 @@
 			justify-content: center;
 			justify-content: flex-start;
 			align-items: center;
-			border: 1px solid $black;
-			border-radius: 8px;
+			// border: 1px solid $black;
+			// border-radius: 8px;
 			padding: 1em 2em;
 		}
 	}

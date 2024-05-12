@@ -1,0 +1,103 @@
+.tabs {
+	.section-title {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	.tabs-btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: background-color 0.3s;
+		border-top: 1px solid rgba($color: $black, $alpha: 8%);
+		padding: 1em 2em;
+		width: 100%;
+		font-size: 1.6rem;
+		line-height: 19.2px;
+		// background-color: $black;
+		font-family: '600';
+		text-align: left;
+
+		svg {
+			transition: transform 0.3s;
+			// transform: rotate(90deg);
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	.tabs-btn:last-of-type {
+		border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+	}
+
+	.tabs-btn.active {
+		background-color: $gray;
+		svg {
+			transform: rotate(90deg);
+		}
+	}
+
+	.tab {
+		display: none;
+		padding: 1em 1em;
+
+		p,
+		li {
+			color: rgba($color: $black, $alpha: 75%);
+			font-size: 1.4rem;
+			line-height: 19.6px;
+			font-family: '400';
+		}
+
+		p {
+			margin-block: 0.5em;
+		}
+
+		ul {
+			padding-left: 1em;
+		}
+
+		ul li {
+			margin-bottom: 0.5em;
+			list-style: disc;
+		}
+
+		&-docs {
+			a {
+				display: flex;
+				position: relative;
+				align-items: center;
+				gap: 1em;
+				transition: background-color 0.3s;
+				border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+				padding: 1em;
+				color: $black;
+				font-size: 1.6rem;
+				line-height: 19.2px;
+				font-family: '600';
+
+				&:hover {
+					background-color: $gray;
+				}
+
+				&::before {
+					position: relative;
+					left: 0;
+
+					background-image: url('http://ailand.local/wp-content/uploads/2024/04/download.svg');
+					width: 24px;
+					height: 24px;
+					content: '';
+				}
+
+				&:last-of-type {
+					margin-bottom: 1em;
+				}
+			}
+		}
+	}
+
+	.tab.active {
+		display: block;
+	}
+}

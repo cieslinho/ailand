@@ -1,59 +1,49 @@
 .pros {
 	@include padding-block;
-	background-color: $gray;
+	background-color: $white;
 
 	&__boxes {
 		display: flex;
 		flex-direction: column;
 		gap: 2em;
-		@include respond(tablet) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
+		padding-bottom: 2em;
 
 		@include respond(desktop) {
-			grid-template-rows: 1fr;
-			grid-template-columns: repeat(4, 1fr);
+			padding-bottom: 0;
 		}
+		// @include respond(tablet) {
+		// 	display: grid;
+		// 	grid-template-columns: repeat(2, 1fr);
+		// }
+
+		// @include respond(desktop) {
+		// 	grid-template-rows: 1fr;
+		// 	grid-template-columns: repeat(3, 1fr);
+		// }
 	}
 
 	&__box {
-		&--mobile {
-			display: flex;
-			align-items: center;
-			gap: 1em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+		background-color: $gray;
+		padding: 1em 1.5em;
+		min-height: 240px;
 
-			@include respond(tablet) {
-				display: none;
-			}
-		}
-
-		&--desktop {
-			display: none;
-
-			@include respond(tablet) {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				gap: 1em;
-				border: 2px solid $blood;
-				border-radius: 8px;
-				background-color: rgba($color: $blood, $alpha: 5%);
-				padding: 3.4em 1em;
-				text-align: center;
-			}
+		@include respond(tablet) {
+			min-height: 300px;
 		}
 	}
 
 	&__icon {
-		border-radius: 0px 8px 8px 0px;
-		background-color: rgba($color: $blood, $alpha: 10%);
-		padding: 1.8em 1.3em;
+		// padding: 1.8em 1.3em;
 
 		svg {
-			fill: $blood;
-			width: 28px;
-			height: 28px;
+			fill: $black;
+			width: 49px;
+			height: 49px;
 
 			@include respond(tablet) {
 				width: 64px;
@@ -70,7 +60,10 @@
 	&__texts {
 		display: flex;
 		flex-direction: column;
-		gap: 0.1em;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+		text-align: center;
 
 		@include respond(tablet) {
 			justify-content: center;
@@ -87,7 +80,7 @@
 		@include respond(tablet) {
 			font-size: 2.4rem;
 			line-height: 33.6px;
-			font-family: '500';
+			font-family: '600';
 		}
 	}
 
@@ -95,6 +88,7 @@
 		font-size: 1.4rem;
 		line-height: 19.6px;
 		font-family: '400';
+		text-align: center;
 
 		@include respond(tablet) {
 			font-size: 1.8rem;
@@ -104,5 +98,31 @@
 
 	&__link {
 		color: $black;
+	}
+
+	&__pagination {
+		bottom: 0px !important;
+		z-index: 200;
+
+		.swiper-pagination-bullet {
+			&-active {
+				background-color: $black;
+			}
+		}
+	}
+}
+
+.page-id-83 {
+	@include respond(desktop-small) {
+		.pros__wrapper {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.5em;
+		}
+
+		.pros__box {
+			width: 100% !important;
+		}
 	}
 }

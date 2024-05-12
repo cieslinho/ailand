@@ -23,6 +23,17 @@
 	// max-width: 1700px;
 }
 
+.page-id-159,
+.page-id-398,
+.page-id-419,
+.page-id-412 {
+	.section-breadcrumbs {
+		@include respond(tablet) {
+			margin-top: 10em;
+		}
+	}
+}
+
 .section-breadcrumbs {
 	display: flex;
 	align-items: center;
@@ -172,5 +183,30 @@
 	&--blue {
 		background-color: #1976d2;
 		color: $white;
+	}
+
+	&--black {
+		background-color: $black;
+		color: $white;
+	}
+
+	&--gray {
+		border: 2px solid $black;
+		background-color: $gray;
+		color: $black;
+	}
+
+	&--header {
+		@include respond(tablet) {
+			width: 100%;
+			max-width: 302px;
+		}
+	}
+
+	&--home {
+		padding-top: 0;
+		padding-left: 0;
+		color: $black;
+		text-align: left;
 	}
 }
