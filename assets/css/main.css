@@ -1031,6 +1031,16 @@ body {
     line-height: 33.6px;
   }
 }
+.category__btn {
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  background-color: #000;
+  padding: 1em 2em;
+  color: #fff;
+  font-family: "600";
+  text-align: center;
+}
 
 .product {
   display: flex !important;
@@ -1360,9 +1370,446 @@ body {
   }
 }
 
-.woocommerce.wp-block-group.alignwide {
+.wpfFilterButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.wpfFilterButtons button {
+  margin: 0 !important;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 0.5em 1em;
+  font-family: "600";
+}
+.wpfFilterButtons .wpfFilterButton {
+  background-color: #000;
+  color: #fff;
+}
+.wpfFilterButtons .wpfClearButton {
+  border: 1px solid #000;
+}
+
+.wpfMainWrapper {
+  border-radius: 8px;
+  background-color: rgba(249, 249, 249, 0.4);
+  padding: 0.5em;
+}
+
+#wpfBlock_1 label.wpfLiLabel,
+#wpfBlock_2 label.wpfLiLabel,
+#wpfBlock_3 label.wpfLiLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3em;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.5em 1em;
+  font-size: 1.4rem;
+  text-align: right;
+}
+#wpfBlock_1 label.wpfLiLabel input,
+#wpfBlock_2 label.wpfLiLabel input,
+#wpfBlock_3 label.wpfLiLabel input {
+  box-sizing: border-box;
+  padding: 0;
+  accent-color: #000;
+}
+#wpfBlock_1 label.wpfLiLabel:hover, #wpfBlock_1 label.wpfLiLabel:active, #wpfBlock_1 label.wpfLiLabel:focus,
+#wpfBlock_2 label.wpfLiLabel:hover,
+#wpfBlock_2 label.wpfLiLabel:active,
+#wpfBlock_2 label.wpfLiLabel:focus,
+#wpfBlock_3 label.wpfLiLabel:hover,
+#wpfBlock_3 label.wpfLiLabel:active,
+#wpfBlock_3 label.wpfLiLabel:focus {
+  border: 1px solid #000;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+#wpfBlock_1 .wpfFilterVerScroll,
+#wpfBlock_2 .wpfFilterVerScroll,
+#wpfBlock_3 .wpfFilterVerScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+#wpfBlock_1,
+#wpfBlock_2,
+#wpfBlock_3 {
+  border-radius: 8px;
+  padding: 0.5em 1em;
+}
+
+.wpfFilterButton.wpfButton,
+.wpfClearButton.wpfButton {
+  width: 100% !important;
+}
+
+.wpfFilterWrapper {
+  padding: 0.5em 1em;
+}
+
+.wpfFilterTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em !important;
+  font-size: 1.4rem;
+  line-height: 19.6px;
+  font-family: "600";
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  .wpfFilterTitle {
+    font-size: 2rem;
+    line-height: 33.6px;
+  }
+}
+.wpfFilterTitle i {
+  font-size: 1.4rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+}
+
+.wpfFilterVerScroll {
+  max-height: 330px !important;
+}
+
+.woocommerce-page #primary,
+.woocommerce-page main.main {
   margin: 0 auto;
   padding: 0 1em;
   width: 100%;
   max-width: 1280px;
+  padding: 2em 1em;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce-page #primary,
+  .woocommerce-page main.main {
+    padding: 3em 1em;
+  }
+}
+.woocommerce-page #primary .related.products,
+.woocommerce-page main.main .related.products {
+  display: none;
+}
+.woocommerce-page #sidebar {
+  display: none;
+}
+
+.woocommerce-products-header__title.page-title.section-title {
+  margin-bottom: 0.5em !important;
+}
+
+.woocommerce .woocommerce-result-count,
+.woocommerce-page .woocommerce-result-count,
+.woocommerce .woocommerce-ordering,
+.woocommerce-page .woocommerce-ordering {
+  float: none !important;
+}
+
+.woocommerce .woocommerce-ordering,
+.woocommerce-page .woocommerce-ordering {
+  text-align: left;
+}
+.woocommerce .woocommerce-ordering select,
+.woocommerce-page .woocommerce-ordering select {
+  border-radius: 8px;
+  background-color: #000;
+  padding: 0.5em 1em;
+  width: 100%;
+  color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce .woocommerce-ordering select,
+  .woocommerce-page .woocommerce-ordering select {
+    width: unset;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce .woocommerce-ordering,
+  .woocommerce-page .woocommerce-ordering {
+    text-align: right;
+  }
+}
+
+.shop-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+}
+@media only screen and (min-width: 768px) {
+  .shop-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.3fr 0.7fr;
+  }
+}
+.shop-wrapper .products.columns-4 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+  width: 100% !important;
+}
+@media only screen and (min-width: 768px) {
+  .shop-wrapper .products.columns-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1230px) {
+  .shop-wrapper .products.columns-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.shop-wrapper .products.columns-4 li.product {
+  flex-direction: column;
+  margin: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 0.5em 1em !important;
+  width: 100% !important;
+}
+.shop-wrapper .products.columns-4 li.product a.woocommerce-loop-product__link {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.shop-wrapper .products.columns-4 li.product a > img {
+  margin: 0 !important;
+}
+.shop-wrapper .products.columns-4 li.product a.button {
+  display: none;
+}
+.shop-wrapper .products.columns-4 li.product h2 {
+  order: 1;
+  padding: 0 !important;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1.4rem;
+  line-height: 19.6px;
+  font-family: "400";
+}
+.shop-wrapper .products.columns-4 li.product span.price {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: 2rem;
+  line-height: 28px;
+  font-family: "600";
+}
+@media only screen and (min-width: 768px) {
+  .shop-wrapper .products.columns-4 li.product span.price {
+    font-size: 2.4rem;
+    line-height: 33.6px;
+  }
+}
+.shop-wrapper .products.columns-4::before, .shop-wrapper .products.columns-4::after {
+  display: none;
+}
+
+.single-product .product.type-product {
+  flex-direction: column;
+  gap: 2em;
+}
+@media only screen and (min-width: 768px) {
+  .single-product .product.type-product {
+    flex-direction: row;
+    gap: 5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .single-product .product.type-product {
+    gap: 10em;
+  }
+}
+.single-product .product.type-product .woocommerce-product-gallery {
+  display: flex;
+  flex-direction: column;
+  float: none !important;
+  gap: 1em;
+  width: 100% !important;
+}
+@media only screen and (min-width: 768px) {
+  .single-product .product.type-product .woocommerce-product-gallery {
+    width: 55% !important;
+  }
+}
+.single-product .product.type-product .woocommerce-product-gallery .flex-control-nav.flex-control-thumbs {
+  display: flex;
+}
+.single-product .product.type-product .summary.entry-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100% !important;
+}
+@media only screen and (min-width: 768px) {
+  .single-product .product.type-product .summary.entry-summary {
+    width: 45% !important;
+  }
+}
+.single-product .product.type-product .summary.entry-summary .variations_form.cart {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0 !important;
+}
+.single-product .product.type-product .summary.entry-summary .wau_wrapper_div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  padding: 0 !important;
+}
+.single-product .product.type-product .summary.entry-summary .wau_wrapper_div label {
+  color: #000;
+  font-size: 1.6rem;
+  line-height: 25.2px;
+  font-family: "500";
+}
+.single-product .product.type-product .summary.entry-summary .wau_wrapper_div input {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1.3rem;
+  line-height: 22.4px;
+  font-family: "400";
+}
+.single-product .product.type-product .summary.entry-summary .woocommerce-variation-add-to-cart {
+  display: flex;
+  flex-direction: column;
+}
+.single-product .product.type-product .summary.entry-summary .woocommerce-variation-add-to-cart button {
+  border-radius: 8px;
+  background-color: #000;
+}
+.single-product .product.type-product .summary.entry-summary .quantity {
+  margin-bottom: 1em;
+}
+.single-product .product.type-product .summary.entry-summary .quantity input {
+  border: 1px solid #f9f9f9;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+.single-product .product.type-product .product_title.entry-title {
+  font-size: 2rem;
+  line-height: 28px;
+  font-family: "600";
+}
+@media only screen and (min-width: 768px) {
+  .single-product .product.type-product .product_title.entry-title {
+    font-size: 2.4rem;
+    line-height: 33.6px;
+  }
+}
+.single-product .product.type-product .variations {
+  display: none !important;
+}
+.single-product .product.type-product .title-info,
+.single-product .product.type-product .price-info,
+.single-product .product.type-product .product-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.single-product .product.type-product .product-sku,
+.single-product .product.type-product .product-meta {
+  display: flex;
+  align-items: flex-start;
+  background-color: #000;
+  padding: 0.3em 0.6em;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 16.8px;
+  font-family: "500";
+}
+.single-product .product.type-product .product-addons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 1em;
+  border: 1px solid #f9f9f9;
+  border-radius: 8px;
+}
+.single-product .product.type-product .product-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+}
+.single-product .product.type-product .product-box:first-child {
+  border-bottom: 1px solid #f9f9f9;
+}
+.single-product .product.type-product .product-info {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1.6rem;
+  line-height: 22.4px;
+  font-family: "400";
+}
+.single-product .product.type-product .product-text {
+  font-size: 1.4rem;
+  line-height: 19.6px;
+  font-family: "600";
+}
+.single-product .product.type-product .product-meta a {
+  color: #fff;
+}
+.single-product .product.type-product .price-info .price {
+  color: #000;
+  font-size: 2rem;
+  line-height: 28px;
+  font-family: "600";
+}
+@media only screen and (min-width: 768px) {
+  .single-product .product.type-product .price-info .price {
+    font-size: 3.2rem;
+    line-height: 44.8px;
+  }
+}
+.single-product .product.type-product .price-total {
+  gap: 0.5em;
+  border: 1px solid #f9f9f9;
+  border-radius: 8px;
+  padding: 1em 1em;
+}
+.single-product .product.type-product .price-all {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.woocommerce-message {
+  border-top-color: #000;
+}
+.woocommerce-message::before {
+  color: #000;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button {
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button:hover,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button:hover,
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
 }

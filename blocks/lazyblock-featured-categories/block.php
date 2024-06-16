@@ -17,5 +17,7 @@
             <?php endforeach; ?>
         </div>
 
+<a href="/wszystkie-produkty/" class="category__btn">Sprawdź wszystkie produkty</a>
+
     </div>
 </section>

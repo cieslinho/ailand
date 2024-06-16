@@ -99,7 +99,6 @@ if ( woocommerce_product_loop() ) {
 		
 <div class='shop-wrapper'>
     <div class="filters">
-    <?php echo do_shortcode('[wpf-filters id=1]');?>
 	<?php echo do_shortcode('[wpf-filters id=2]');?>
     </div>
 	
