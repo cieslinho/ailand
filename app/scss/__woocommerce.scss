@@ -11,6 +11,16 @@
 		}
 	}
 
+	&.woocommerce-cart,
+	&.woocommerce-checkout,
+	&.woocommerce-account {
+		margin-top: 2em;
+
+		@include respond(tablet-xl) {
+			margin-top: 8em;
+		}
+	}
+
 	#sidebar {
 		display: none;
 	}
@@ -329,11 +339,47 @@
 	}
 }
 
-.woocommerce-message {
+.woocommerce-message,
+.woocommerce-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 	border-top-color: $black;
+
+	@include respond(tablet) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	a.button {
+		margin-top: 1em;
+
+		@include respond(tablet) {
+			order: 1;
+			margin-top: 0;
+		}
+	}
+
+	a.restore-item {
+		border-radius: 8px;
+		background-color: $black;
+		padding: 0.5em 1em;
+		color: $white;
+		font-family: '600';
+	}
 
 	&::before {
 		color: $black;
+
+		@include respond(tablet) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&::after {
+		display: none;
 	}
 }
 
@@ -353,5 +399,468 @@
 	&:hover {
 		background-color: rgba($color: $black, $alpha: 0.1);
 		color: $black;
+	}
+}
+
+.theme-aiLand table th {
+	background-color: $black;
+	color: $white;
+}
+
+.woocommerce .woocommerce-cart-form table.shop_table_responsive tr.woocommerce-cart-form__cart-item td {
+	vertical-align: middle;
+}
+
+.theme-aiLand table > tbody > tr:nth-child(2n + 1) > td {
+	background-color: $gray;
+}
+
+.theme-aiLand .woocommerce table.shop_table td.product-name > *,
+.theme-aiLand .woocommerce table.shop_table td.product-name > a,
+.theme-aiLand .woocommerce table.shop_table td.product-name {
+	color: $black;
+	font-family: '600';
+}
+
+.woocommerce table.cart th,
+.woocommerce #content table.cart th,
+.woocommerce-page table.cart th,
+.woocommerce-page #content table.cart th,
+.woocommerce table.cart td,
+.woocommerce #content table.cart td,
+.woocommerce-page table.cart td,
+.woocommerce-page #content table.cart td {
+	padding: 1em;
+}
+
+.shipping-calculator-button {
+	color: $black;
+
+	&::after {
+		color: $black;
+	}
+}
+
+.cart_totals {
+	h2 {
+		margin-bottom: 1em;
+	}
+}
+
+.checkout-button.button.alt.wc-forward {
+	background-color: $black;
+	font-size: 1.6rem;
+
+	&:hover {
+		background-color: $black;
+	}
+}
+
+.coupon {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	input,
+	button {
+		border: 1px solid transparent;
+		padding: 1em 2em !important;
+	}
+
+	input.input-text {
+		border: 1px solid $black;
+		border-radius: 8px;
+	}
+}
+
+td.product-remove {
+	a.remove {
+		background-color: $blood;
+		color: $white !important;
+	}
+}
+// .woocommerce table.cart .product-remove,
+// .woocommerce #content table.cart .product-remove,
+// .woocommerce-page table.cart .product-remove,
+// .woocommerce-page #content table.cart .product-remove,
+// .woocommerce table.cart .product-thumbnail,
+// .woocommerce #content table.cart .product-thumbnail,
+// .woocommerce-page table.cart .product-thumbnail,
+// .woocommerce-page #content table.cart .product-thumbnail {
+// 	width: 50px;
+// }
+
+.woocommerce-checkout h3,
+.woocommerce-checkout h2 {
+	font-size: 2rem;
+}
+
+.woocommerce form .form-row label,
+.woocommerce-page form .form-row label {
+	padding: 1em 0 0.5em;
+	font-size: 1.6rem;
+	line-height: 1.5em;
+	font-family: '600';
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='password'],
+input[type='search'],
+select,
+textarea,
+textarea.wp-editor-area,
+form.mc4wp-form .mc4wp-form-fields input[type='email'],
+.tourmaster-form-field input[type='text'],
+.tourmaster-form-field input[type='email'],
+.tourmaster-form-field input[type='password'],
+.tourmaster-form-field textarea,
+.tourmaster-form-field select,
+.tourmaster-form-field.tourmaster-with-border input[type='text'],
+.tourmaster-form-field.tourmaster-with-border input[type='email'],
+.tourmaster-form-field.tourmaster-with-border input[type='password'],
+.tourmaster-form-field.tourmaster-with-border textarea,
+.tourmaster-form-field.tourmaster-with-border select,
+.woocommerce table.cart td.actions .coupon .input-text,
+.woocommerce #content table.cart td.actions .coupon .input-text,
+.woocommerce-page table.cart td.actions .coupon .input-text,
+.woocommerce-page #content table.cart td.actions .coupon .input-text,
+#buddypress div.dir-search input[type='search'],
+#buddypress div.dir-search input[type='text'],
+#buddypress li.groups-members-search input[type='search'],
+#buddypress li.groups-members-search input[type='text'],
+#buddypress .standard-form input[type='color'],
+#buddypress .standard-form input[type='date'],
+#buddypress .standard-form input[type='datetime-local'],
+#buddypress .standard-form input[type='datetime'],
+#buddypress .standard-form input[type='email'],
+#buddypress .standard-form input[type='month'],
+#buddypress .standard-form input[type='number'],
+#buddypress .standard-form input[type='password'],
+#buddypress .standard-form input[type='range'],
+#buddypress .standard-form input[type='search'],
+#buddypress .standard-form input[type='tel'],
+#buddypress .standard-form input[type='text'],
+#buddypress .standard-form input[type='time'],
+#buddypress .standard-form input[type='url'],
+#buddypress .standard-form input[type='week'],
+#buddypress .standard-form select,
+#buddypress .standard-form textarea,
+#give-recurring-form .form-row input[type='email'],
+#give-recurring-form .form-row input[type='password'],
+#give-recurring-form .form-row input[type='tel'],
+#give-recurring-form .form-row input[type='text'],
+#give-recurring-form .form-row input[type='url'],
+#give-recurring-form .form-row select,
+#give-recurring-form .form-row textarea,
+form.give-form .form-row input[type='email'],
+form.give-form .form-row input[type='password'],
+form.give-form .form-row input[type='tel'],
+form.give-form .form-row input[type='text'],
+form.give-form .form-row input[type='url'],
+form.give-form .form-row select,
+form.give-form .form-row textarea,
+form[id*='give-form'] .form-row input[type='email'],
+form[id*='give-form'] .form-row input[type='password'],
+form[id*='give-form'] .form-row input[type='tel'],
+form[id*='give-form'] .form-row input[type='text'],
+form[id*='give-form'] .form-row input[type='url'],
+form[id*='give-form'] .form-row select,
+form[id*='give-form'] .form-row textarea,
+form[id*='give-form'] .give-donation-amount #give-amount,
+form[id*='give-form'] .give-donation-amount #give-amount-text,
+form[id*='give-form'] #give-final-total-wrap .give-final-total-amount,
+form[id*='give-form'] .give-donation-amount .give-currency-symbol,
+form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-before,
+form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-after,
+form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
+	border: 1px solid rgba($color: $black, $alpha: 55%);
+	border-radius: 8px;
+	padding: 0.5em 1em;
+}
+
+.theme-aiLand input[type='text']:focus,
+.theme-aiLand input[type='text'].filled,
+.theme-aiLand input[type='number']:focus,
+.theme-aiLand input[type='number'].filled,
+.theme-aiLand input[type='email']:focus,
+.theme-aiLand input[type='email'].filled,
+.theme-aiLand input[type='tel']:focus,
+.theme-aiLand input[type='search']:focus,
+.theme-aiLand input[type='search'].filled,
+.theme-aiLand input[type='password']:focus,
+.theme-aiLand input[type='password'].filled,
+.theme-aiLand .select_container:hover,
+.theme-aiLand select option:hover,
+.theme-aiLand select option:focus,
+.theme-aiLand
+	select.select2-hidden-accessible.filled
+	+ .select2-container.select2-container--default
+	span.select2-selection--single,
+.theme-aiLand .select2-container.select2-container--default span.select2-selection--single:hover,
+.theme-aiLand .select2-container.select2-container--focus span.select2-selection--single,
+.theme-aiLand .select2-container.select2-container--open span.select2-selection--single,
+.theme-aiLand
+	select.select2-hidden-accessible.filled
+	+ .select2-container.select2-container--default
+	span.select2-choice,
+.theme-aiLand .select2-container.select2-container--default span.select2-choice:hover,
+.theme-aiLand .select2-container.select2-container--focus span.select2-choice,
+.theme-aiLand .select2-container.select2-container--open span.select2-choice,
+.theme-aiLand
+	select.select2-hidden-accessible.filled
+	+ .select2-container.select2-container--default
+	span.select2-selection--multiple,
+.theme-aiLand .select2-container.select2-container--default span.select2-selection--multiple:hover,
+.theme-aiLand .select2-container.select2-container--focus span.select2-selection--multiple,
+.theme-aiLand .select2-container.select2-container--open span.select2-selection--multiple,
+.theme-aiLand textarea:focus,
+.theme-aiLand textarea.filled,
+.theme-aiLand textarea.wp-editor-area:focus,
+.theme-aiLand textarea.wp-editor-area.filled,
+.theme-aiLand .tourmaster-form-field input[type='text']:focus,
+.theme-aiLand .tourmaster-form-field input[type='text'].filled,
+.theme-aiLand .tourmaster-form-field input[type='email']:focus,
+.theme-aiLand .tourmaster-form-field input[type='email'].filled,
+.theme-aiLand .tourmaster-form-field input[type='password']:focus,
+.theme-aiLand .tourmaster-form-field input[type='password'].filled,
+.theme-aiLand .tourmaster-form-field textarea:focus,
+.theme-aiLand .tourmaster-form-field textarea.filled,
+.theme-aiLand .tourmaster-form-field select:focus,
+.theme-aiLand .tourmaster-form-field select.filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type='text']:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type='text'].filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type='email']:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type='email'].filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type='password']:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type='password'].filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border textarea:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border textarea.filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border select:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border select.filled,
+.theme-aiLand #buddypress .dir-search input[type='search']:focus,
+.theme-aiLand #buddypress .dir-search input[type='search'].filled,
+.theme-aiLand #buddypress .dir-search input[type='text']:focus,
+.theme-aiLand #buddypress .dir-search input[type='text'].filled,
+.theme-aiLand #buddypress .groups-members-search input[type='search']:focus,
+.theme-aiLand #buddypress .groups-members-search input[type='search'].filled,
+.theme-aiLand #buddypress .groups-members-search input[type='text']:focus,
+.theme-aiLand #buddypress .groups-members-search input[type='text'].filled,
+.theme-aiLand #buddypress .standard-form input[type='color']:focus,
+.theme-aiLand #buddypress .standard-form input[type='color'].filled,
+.theme-aiLand #buddypress .standard-form input[type='date']:focus,
+.theme-aiLand #buddypress .standard-form input[type='date'].filled,
+.theme-aiLand #buddypress .standard-form input[type='datetime-local']:focus,
+.theme-aiLand #buddypress .standard-form input[type='datetime-local'].filled,
+.theme-aiLand #buddypress .standard-form input[type='datetime']:focus,
+.theme-aiLand #buddypress .standard-form input[type='datetime'].filled,
+.theme-aiLand #buddypress .standard-form input[type='email']:focus,
+.theme-aiLand #buddypress .standard-form input[type='email'].filled,
+.theme-aiLand #buddypress .standard-form input[type='month']:focus,
+.theme-aiLand #buddypress .standard-form input[type='month'].filled,
+.theme-aiLand #buddypress .standard-form input[type='number']:focus,
+.theme-aiLand #buddypress .standard-form input[type='number'].filled,
+.theme-aiLand #buddypress .standard-form input[type='password']:focus,
+.theme-aiLand #buddypress .standard-form input[type='password'].filled,
+.theme-aiLand #buddypress .standard-form input[type='range']:focus,
+.theme-aiLand #buddypress .standard-form input[type='range'].filled,
+.theme-aiLand #buddypress .standard-form input[type='search']:focus,
+.theme-aiLand #buddypress .standard-form input[type='search'].filled,
+.theme-aiLand #buddypress .standard-form input[type='tel']:focus,
+.theme-aiLand #buddypress .standard-form input[type='tel'].filled,
+.theme-aiLand #buddypress .standard-form input[type='text']:focus,
+.theme-aiLand #buddypress .standard-form input[type='text'].filled,
+.theme-aiLand #buddypress .standard-form input[type='time']:focus,
+.theme-aiLand #buddypress .standard-form input[type='time'].filled,
+.theme-aiLand #buddypress .standard-form input[type='url']:focus,
+.theme-aiLand #buddypress .standard-form input[type='url'].filled,
+.theme-aiLand #buddypress .standard-form input[type='week']:focus,
+.theme-aiLand #buddypress .standard-form input[type='week'].filled,
+.theme-aiLand #buddypress .standard-form select:focus,
+.theme-aiLand #buddypress .standard-form select.filled,
+.theme-aiLand #buddypress .standard-form textarea:focus,
+.theme-aiLand #buddypress .standard-form textarea.filled,
+.theme-aiLand #buddypress form#whats-new-form textarea:focus,
+.theme-aiLand #buddypress form#whats-new-form textarea.filled,
+.theme-aiLand #booked-page-form input[type='email']:focus,
+.theme-aiLand #booked-page-form input[type='email'].filled,
+.theme-aiLand #booked-page-form input[type='text']:focus,
+.theme-aiLand #booked-page-form input[type='text'].filled,
+.theme-aiLand #booked-page-form input[type='password']:focus,
+.theme-aiLand #booked-page-form input[type='password'].filled,
+.theme-aiLand #booked-page-form textarea:focus,
+.theme-aiLand #booked-page-form textarea.filled,
+.theme-aiLand .booked-upload-wrap:hover,
+.theme-aiLand .booked-upload-wrap input:focus,
+.theme-aiLand .booked-upload-wrap input.filled,
+.theme-aiLand form.mc4wp-form input[type='email']:focus,
+.theme-aiLand form.mc4wp-form input[type='email'].filled {
+	border: 1px solid $black;
+}
+
+#order_review_heading {
+	margin-block: 1em;
+}
+
+.woocommerce table.shop_table {
+	border: unset !important;
+}
+
+.theme-aiLand .woocommerce table.shop_table tfoot th,
+.theme-aiLand .woocommerce-page table.shop_table tfoot th {
+	background-color: transparent !important;
+	color: $black;
+	text-align: right;
+}
+
+#add_payment_method #payment ul.payment_methods,
+.woocommerce-cart #payment ul.payment_methods,
+.woocommerce-checkout #payment ul.payment_methods {
+	margin: 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #cfc8d8;
+	padding: 1em;
+	list-style: none outside;
+	text-align: left;
+}
+
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+	background-color: transparent !important;
+}
+
+#add_payment_method #payment div.payment_box,
+.woocommerce-cart #payment div.payment_box,
+.woocommerce-checkout #payment div.payment_box {
+	background-color: rgba($color: $black, $alpha: 0.1);
+}
+
+#add_payment_method #payment div.payment_box::before,
+.woocommerce-cart #payment div.payment_box::before,
+.woocommerce-checkout #payment div.payment_box::before {
+	top: -0.9em;
+	border: 1em solid rgba($color: $black, $alpha: 0.1);
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-left-color: transparent;
+}
+
+p.cr-customer-consent {
+	display: none;
+}
+
+a.woocommerce-privacy-policy-link {
+	color: $black;
+	font-family: '600';
+}
+
+.input-radio {
+	filter: grayscale(1);
+}
+
+.form-row.place-order {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	button.button.alt {
+		background-color: $black;
+	}
+
+	&::after,
+	&::before {
+		display: none !important;
+	}
+}
+
+.woocommerce-order-details__title {
+	margin-bottom: 1em;
+}
+
+.theme-aiLand .woocommerce .order_details.woocommerce-thankyou-order-details {
+	margin-top: 0.5em;
+	background-color: rgba($color: $black, $alpha: 0.05);
+	padding: 1em;
+}
+
+.woocommerce ul.order_details li {
+	float: none;
+	margin-block: 0.5em;
+
+	@include respond(tablet) {
+		float: left;
+	}
+}
+
+.woocommerce-order {
+	@include respond(tablet) {
+		margin-top: 8em;
+	}
+}
+
+.woocommerce .order_details.woocommerce-thankyou-order-details li strong {
+	margin-top: 0.3em;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation,
+.woocommerce-account .woocommerce-MyAccount-content {
+	float: none;
+	width: 100%;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+	padding: 1em 0;
+	width: 100%;
+	text-align: center;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li {
+	display: block;
+	border: 1px solid rgba($color: $black, $alpha: 0.05);
+	border-top-width: 0;
+
+	@include respond(tablet) {
+		border-top-width: 1px;
+	}
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+	display: block;
+	padding: 0.5em 1em;
+	color: $black;
+}
+
+.woocommerce-MyAccount-navigation li.is-active a {
+	font-family: '600';
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+	@include respond(tablet) {
+		float: left;
+		width: 20%;
+	}
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+	@include respond(tablet) {
+		float: right;
+		width: 75%;
+	}
+}
+
+#customer_details {
+	.col-1 {
+		float: none !important;
+		width: 100% !important;
+	}
+
+	#billing_first_name_field,
+	#billing_last_name_field {
+		float: none !important;
+		width: 100% !important;
 	}
 }

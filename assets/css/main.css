@@ -1501,6 +1501,14 @@ body {
 .woocommerce-page main.main .related.products {
   display: none;
 }
+.woocommerce-page.woocommerce-cart, .woocommerce-page.woocommerce-checkout, .woocommerce-page.woocommerce-account {
+  margin-top: 2em;
+}
+@media only screen and (min-width: 992px) {
+  .woocommerce-page.woocommerce-cart, .woocommerce-page.woocommerce-checkout, .woocommerce-page.woocommerce-account {
+    margin-top: 8em;
+  }
+}
 .woocommerce-page #sidebar {
   display: none;
 }
@@ -1782,11 +1790,54 @@ body {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.woocommerce-message {
+.woocommerce-message,
+.woocommerce-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   border-top-color: #000;
 }
-.woocommerce-message::before {
+@media only screen and (min-width: 768px) {
+  .woocommerce-message,
+  .woocommerce-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.woocommerce-message a.button,
+.woocommerce-info a.button {
+  margin-top: 1em;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce-message a.button,
+  .woocommerce-info a.button {
+    order: 1;
+    margin-top: 0;
+  }
+}
+.woocommerce-message a.restore-item,
+.woocommerce-info a.restore-item {
+  border-radius: 8px;
+  background-color: #000;
+  padding: 0.5em 1em;
+  color: #fff;
+  font-family: "600";
+}
+.woocommerce-message::before,
+.woocommerce-info::before {
   color: #000;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce-message::before,
+  .woocommerce-info::before {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.woocommerce-message::after,
+.woocommerce-info::after {
+  display: none;
 }
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit,
@@ -1812,4 +1863,436 @@ body {
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: #000;
+}
+
+.theme-aiLand table th {
+  background-color: #000;
+  color: #fff;
+}
+
+.woocommerce .woocommerce-cart-form table.shop_table_responsive tr.woocommerce-cart-form__cart-item td {
+  vertical-align: middle;
+}
+
+.theme-aiLand table > tbody > tr:nth-child(2n+1) > td {
+  background-color: #f9f9f9;
+}
+
+.theme-aiLand .woocommerce table.shop_table td.product-name > *,
+.theme-aiLand .woocommerce table.shop_table td.product-name > a,
+.theme-aiLand .woocommerce table.shop_table td.product-name {
+  color: #000;
+  font-family: "600";
+}
+
+.woocommerce table.cart th,
+.woocommerce #content table.cart th,
+.woocommerce-page table.cart th,
+.woocommerce-page #content table.cart th,
+.woocommerce table.cart td,
+.woocommerce #content table.cart td,
+.woocommerce-page table.cart td,
+.woocommerce-page #content table.cart td {
+  padding: 1em;
+}
+
+.shipping-calculator-button {
+  color: #000;
+}
+.shipping-calculator-button::after {
+  color: #000;
+}
+
+.cart_totals h2 {
+  margin-bottom: 1em;
+}
+
+.checkout-button.button.alt.wc-forward {
+  background-color: #000;
+  font-size: 1.6rem;
+}
+.checkout-button.button.alt.wc-forward:hover {
+  background-color: #000;
+}
+
+.coupon {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.coupon input,
+.coupon button {
+  border: 1px solid transparent;
+  padding: 1em 2em !important;
+}
+.coupon input.input-text {
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+td.product-remove a.remove {
+  background-color: #ed202a;
+  color: #fff !important;
+}
+
+.woocommerce-checkout h3,
+.woocommerce-checkout h2 {
+  font-size: 2rem;
+}
+
+.woocommerce form .form-row label,
+.woocommerce-page form .form-row label {
+  padding: 1em 0 0.5em;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  font-family: "600";
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=url],
+input[type=tel],
+input[type=password],
+input[type=search],
+select,
+textarea,
+textarea.wp-editor-area,
+form.mc4wp-form .mc4wp-form-fields input[type=email],
+.tourmaster-form-field input[type=text],
+.tourmaster-form-field input[type=email],
+.tourmaster-form-field input[type=password],
+.tourmaster-form-field textarea,
+.tourmaster-form-field select,
+.tourmaster-form-field.tourmaster-with-border input[type=text],
+.tourmaster-form-field.tourmaster-with-border input[type=email],
+.tourmaster-form-field.tourmaster-with-border input[type=password],
+.tourmaster-form-field.tourmaster-with-border textarea,
+.tourmaster-form-field.tourmaster-with-border select,
+.woocommerce table.cart td.actions .coupon .input-text,
+.woocommerce #content table.cart td.actions .coupon .input-text,
+.woocommerce-page table.cart td.actions .coupon .input-text,
+.woocommerce-page #content table.cart td.actions .coupon .input-text,
+#buddypress div.dir-search input[type=search],
+#buddypress div.dir-search input[type=text],
+#buddypress li.groups-members-search input[type=search],
+#buddypress li.groups-members-search input[type=text],
+#buddypress .standard-form input[type=color],
+#buddypress .standard-form input[type=date],
+#buddypress .standard-form input[type=datetime-local],
+#buddypress .standard-form input[type=datetime],
+#buddypress .standard-form input[type=email],
+#buddypress .standard-form input[type=month],
+#buddypress .standard-form input[type=number],
+#buddypress .standard-form input[type=password],
+#buddypress .standard-form input[type=range],
+#buddypress .standard-form input[type=search],
+#buddypress .standard-form input[type=tel],
+#buddypress .standard-form input[type=text],
+#buddypress .standard-form input[type=time],
+#buddypress .standard-form input[type=url],
+#buddypress .standard-form input[type=week],
+#buddypress .standard-form select,
+#buddypress .standard-form textarea,
+#give-recurring-form .form-row input[type=email],
+#give-recurring-form .form-row input[type=password],
+#give-recurring-form .form-row input[type=tel],
+#give-recurring-form .form-row input[type=text],
+#give-recurring-form .form-row input[type=url],
+#give-recurring-form .form-row select,
+#give-recurring-form .form-row textarea,
+form.give-form .form-row input[type=email],
+form.give-form .form-row input[type=password],
+form.give-form .form-row input[type=tel],
+form.give-form .form-row input[type=text],
+form.give-form .form-row input[type=url],
+form.give-form .form-row select,
+form.give-form .form-row textarea,
+form[id*=give-form] .form-row input[type=email],
+form[id*=give-form] .form-row input[type=password],
+form[id*=give-form] .form-row input[type=tel],
+form[id*=give-form] .form-row input[type=text],
+form[id*=give-form] .form-row input[type=url],
+form[id*=give-form] .form-row select,
+form[id*=give-form] .form-row textarea,
+form[id*=give-form] .give-donation-amount #give-amount,
+form[id*=give-form] .give-donation-amount #give-amount-text,
+form[id*=give-form] #give-final-total-wrap .give-final-total-amount,
+form[id*=give-form] .give-donation-amount .give-currency-symbol,
+form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before,
+form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-after,
+form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  border-radius: 8px;
+  padding: 0.5em 1em;
+}
+
+.theme-aiLand input[type=text]:focus,
+.theme-aiLand input[type=text].filled,
+.theme-aiLand input[type=number]:focus,
+.theme-aiLand input[type=number].filled,
+.theme-aiLand input[type=email]:focus,
+.theme-aiLand input[type=email].filled,
+.theme-aiLand input[type=tel]:focus,
+.theme-aiLand input[type=search]:focus,
+.theme-aiLand input[type=search].filled,
+.theme-aiLand input[type=password]:focus,
+.theme-aiLand input[type=password].filled,
+.theme-aiLand .select_container:hover,
+.theme-aiLand select option:hover,
+.theme-aiLand select option:focus,
+.theme-aiLand select.select2-hidden-accessible.filled + .select2-container.select2-container--default span.select2-selection--single,
+.theme-aiLand .select2-container.select2-container--default span.select2-selection--single:hover,
+.theme-aiLand .select2-container.select2-container--focus span.select2-selection--single,
+.theme-aiLand .select2-container.select2-container--open span.select2-selection--single,
+.theme-aiLand select.select2-hidden-accessible.filled + .select2-container.select2-container--default span.select2-choice,
+.theme-aiLand .select2-container.select2-container--default span.select2-choice:hover,
+.theme-aiLand .select2-container.select2-container--focus span.select2-choice,
+.theme-aiLand .select2-container.select2-container--open span.select2-choice,
+.theme-aiLand select.select2-hidden-accessible.filled + .select2-container.select2-container--default span.select2-selection--multiple,
+.theme-aiLand .select2-container.select2-container--default span.select2-selection--multiple:hover,
+.theme-aiLand .select2-container.select2-container--focus span.select2-selection--multiple,
+.theme-aiLand .select2-container.select2-container--open span.select2-selection--multiple,
+.theme-aiLand textarea:focus,
+.theme-aiLand textarea.filled,
+.theme-aiLand textarea.wp-editor-area:focus,
+.theme-aiLand textarea.wp-editor-area.filled,
+.theme-aiLand .tourmaster-form-field input[type=text]:focus,
+.theme-aiLand .tourmaster-form-field input[type=text].filled,
+.theme-aiLand .tourmaster-form-field input[type=email]:focus,
+.theme-aiLand .tourmaster-form-field input[type=email].filled,
+.theme-aiLand .tourmaster-form-field input[type=password]:focus,
+.theme-aiLand .tourmaster-form-field input[type=password].filled,
+.theme-aiLand .tourmaster-form-field textarea:focus,
+.theme-aiLand .tourmaster-form-field textarea.filled,
+.theme-aiLand .tourmaster-form-field select:focus,
+.theme-aiLand .tourmaster-form-field select.filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type=text]:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type=text].filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type=email]:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type=email].filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type=password]:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border input[type=password].filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border textarea:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border textarea.filled,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border select:focus,
+.theme-aiLand .tourmaster-form-field.tourmaster-with-border select.filled,
+.theme-aiLand #buddypress .dir-search input[type=search]:focus,
+.theme-aiLand #buddypress .dir-search input[type=search].filled,
+.theme-aiLand #buddypress .dir-search input[type=text]:focus,
+.theme-aiLand #buddypress .dir-search input[type=text].filled,
+.theme-aiLand #buddypress .groups-members-search input[type=search]:focus,
+.theme-aiLand #buddypress .groups-members-search input[type=search].filled,
+.theme-aiLand #buddypress .groups-members-search input[type=text]:focus,
+.theme-aiLand #buddypress .groups-members-search input[type=text].filled,
+.theme-aiLand #buddypress .standard-form input[type=color]:focus,
+.theme-aiLand #buddypress .standard-form input[type=color].filled,
+.theme-aiLand #buddypress .standard-form input[type=date]:focus,
+.theme-aiLand #buddypress .standard-form input[type=date].filled,
+.theme-aiLand #buddypress .standard-form input[type=datetime-local]:focus,
+.theme-aiLand #buddypress .standard-form input[type=datetime-local].filled,
+.theme-aiLand #buddypress .standard-form input[type=datetime]:focus,
+.theme-aiLand #buddypress .standard-form input[type=datetime].filled,
+.theme-aiLand #buddypress .standard-form input[type=email]:focus,
+.theme-aiLand #buddypress .standard-form input[type=email].filled,
+.theme-aiLand #buddypress .standard-form input[type=month]:focus,
+.theme-aiLand #buddypress .standard-form input[type=month].filled,
+.theme-aiLand #buddypress .standard-form input[type=number]:focus,
+.theme-aiLand #buddypress .standard-form input[type=number].filled,
+.theme-aiLand #buddypress .standard-form input[type=password]:focus,
+.theme-aiLand #buddypress .standard-form input[type=password].filled,
+.theme-aiLand #buddypress .standard-form input[type=range]:focus,
+.theme-aiLand #buddypress .standard-form input[type=range].filled,
+.theme-aiLand #buddypress .standard-form input[type=search]:focus,
+.theme-aiLand #buddypress .standard-form input[type=search].filled,
+.theme-aiLand #buddypress .standard-form input[type=tel]:focus,
+.theme-aiLand #buddypress .standard-form input[type=tel].filled,
+.theme-aiLand #buddypress .standard-form input[type=text]:focus,
+.theme-aiLand #buddypress .standard-form input[type=text].filled,
+.theme-aiLand #buddypress .standard-form input[type=time]:focus,
+.theme-aiLand #buddypress .standard-form input[type=time].filled,
+.theme-aiLand #buddypress .standard-form input[type=url]:focus,
+.theme-aiLand #buddypress .standard-form input[type=url].filled,
+.theme-aiLand #buddypress .standard-form input[type=week]:focus,
+.theme-aiLand #buddypress .standard-form input[type=week].filled,
+.theme-aiLand #buddypress .standard-form select:focus,
+.theme-aiLand #buddypress .standard-form select.filled,
+.theme-aiLand #buddypress .standard-form textarea:focus,
+.theme-aiLand #buddypress .standard-form textarea.filled,
+.theme-aiLand #buddypress form#whats-new-form textarea:focus,
+.theme-aiLand #buddypress form#whats-new-form textarea.filled,
+.theme-aiLand #booked-page-form input[type=email]:focus,
+.theme-aiLand #booked-page-form input[type=email].filled,
+.theme-aiLand #booked-page-form input[type=text]:focus,
+.theme-aiLand #booked-page-form input[type=text].filled,
+.theme-aiLand #booked-page-form input[type=password]:focus,
+.theme-aiLand #booked-page-form input[type=password].filled,
+.theme-aiLand #booked-page-form textarea:focus,
+.theme-aiLand #booked-page-form textarea.filled,
+.theme-aiLand .booked-upload-wrap:hover,
+.theme-aiLand .booked-upload-wrap input:focus,
+.theme-aiLand .booked-upload-wrap input.filled,
+.theme-aiLand form.mc4wp-form input[type=email]:focus,
+.theme-aiLand form.mc4wp-form input[type=email].filled {
+  border: 1px solid #000;
+}
+
+#order_review_heading {
+  margin-block: 1em;
+}
+
+.woocommerce table.shop_table {
+  border: unset !important;
+}
+
+.theme-aiLand .woocommerce table.shop_table tfoot th,
+.theme-aiLand .woocommerce-page table.shop_table tfoot th {
+  background-color: transparent !important;
+  color: #000;
+  text-align: right;
+}
+
+#add_payment_method #payment ul.payment_methods,
+.woocommerce-cart #payment ul.payment_methods,
+.woocommerce-checkout #payment ul.payment_methods {
+  margin: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #cfc8d8;
+  padding: 1em;
+  list-style: none outside;
+  text-align: left;
+}
+
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+  background-color: transparent !important;
+}
+
+#add_payment_method #payment div.payment_box,
+.woocommerce-cart #payment div.payment_box,
+.woocommerce-checkout #payment div.payment_box {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#add_payment_method #payment div.payment_box::before,
+.woocommerce-cart #payment div.payment_box::before,
+.woocommerce-checkout #payment div.payment_box::before {
+  top: -0.9em;
+  border: 1em solid rgba(0, 0, 0, 0.1);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+p.cr-customer-consent {
+  display: none;
+}
+
+a.woocommerce-privacy-policy-link {
+  color: #000;
+  font-family: "600";
+}
+
+.input-radio {
+  filter: grayscale(1);
+}
+
+.form-row.place-order {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.form-row.place-order button.button.alt {
+  background-color: #000;
+}
+.form-row.place-order::after, .form-row.place-order::before {
+  display: none !important;
+}
+
+.woocommerce-order-details__title {
+  margin-bottom: 1em;
+}
+
+.theme-aiLand .woocommerce .order_details.woocommerce-thankyou-order-details {
+  margin-top: 0.5em;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1em;
+}
+
+.woocommerce ul.order_details li {
+  float: none;
+  margin-block: 0.5em;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce ul.order_details li {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .woocommerce-order {
+    margin-top: 8em;
+  }
+}
+
+.woocommerce .order_details.woocommerce-thankyou-order-details li strong {
+  margin-top: 0.3em;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation,
+.woocommerce-account .woocommerce-MyAccount-content {
+  float: none;
+  width: 100%;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+  padding: 1em 0;
+  width: 100%;
+  text-align: center;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top-width: 0;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce-account .woocommerce-MyAccount-navigation ul li {
+    border-top-width: 1px;
+  }
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+  display: block;
+  padding: 0.5em 1em;
+  color: #000;
+}
+
+.woocommerce-MyAccount-navigation li.is-active a {
+  font-family: "600";
+}
+
+@media only screen and (min-width: 768px) {
+  .woocommerce-account .woocommerce-MyAccount-navigation {
+    float: left;
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .woocommerce-account .woocommerce-MyAccount-content {
+    float: right;
+    width: 75%;
+  }
+}
+
+#customer_details .col-1 {
+  float: none !important;
+  width: 100% !important;
+}
+#customer_details #billing_first_name_field,
+#customer_details #billing_last_name_field {
+  float: none !important;
+  width: 100% !important;
 }

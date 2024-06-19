@@ -169,38 +169,6 @@ function enable_svg_upload( $upload_mimes ) {
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
 
-add_action( 'woocommerce_after_order_notes', 'nip_checkout_field' );
-
-function nip_checkout_field( $checkout ) {
-
-    echo '<div id="nip_checkout_field"><h2>' . __('Dane do faktury') . '</h2>';
-
-    woocommerce_form_field( 'nip', array(
-        'type'          => 'text',
-        'class'         => array('nip-class form-row-wide'),
-        'label'         => __('Numer NIP'),
-        'placeholder'   => __('Wprowadź numer NIP'),
-        ), $checkout->get_value( 'nip' ));
-
-    echo '</div>';
-}
-
-add_action( 'woocommerce_checkout_update_order_meta', 'nip_checkout_field_update_order_meta' );
-
-function nip_checkout_field_update_order_meta( $order_id ) {
-    if ( ! empty( $_POST['nip'] ) ) {
-        update_post_meta( $order_id, 'NIP', sanitize_text_field( $_POST['nip'] ) );
-    }
-}
-
-add_action( 'woocommerce_admin_order_data_after_billing_address', 'nip_checkout_field_display_admin_order_meta', 10, 1 );
-
-function nip_checkout_field_display_admin_order_meta($order){
-    echo '<p><strong>'.__('NIP').':</strong> ' . get_post_meta( $order->id, 'NIP', true ) . '</p>';
-}
-
-
-
 add_filter( 'woocommerce_product_tabs', '__return_empty_array', 98 );
 
 add_shortcode( 'product_reviews', 'product_reviews_shortcode' );
@@ -278,4 +246,169 @@ function variable_fabrics_additional_info(){
       </div>
   
   ';
+}
+
+add_filter('woocommerce_enable_order_notes_field', '__return_false');
+
+
+/*****************************  FRONTEND  ****************************************/
+
+/**************************
+
+Filter to add a VAT field to:
+- My Account - Edit Form -- Billing fields
+- Checkout - Edit Form - Billing Fields
+This function is also reordering the form fields.
+***************************/
+
+function add_woocommerce_billing_fields($billing_fields){
+
+  //reorder woo my billing address form fields
+  $billing_fields2['billing_first_name'] = $billing_fields['billing_first_name'];
+  $billing_fields2['billing_last_name'] = $billing_fields['billing_last_name'];
+
+  $billing_fields2['billing_vat'] = array(
+              'type' => 'text',
+              'label' =>  __('NIP',  'keyelp-shop-customization' ),
+              'class' => array('form-row-wide'),
+              'required' => false,
+              'clear' => true
+  );
+      
+  $merged_billing_fields =  $billing_fields2 + $billing_fields;
+
+
+  return $merged_billing_fields;
+
+}
+
+add_filter('woocommerce_billing_fields' , 'add_woocommerce_billing_fields');
+
+
+/*********
+Filters to add VAT when printing billing address on:
+- (1) My account 
+- (2) Checkout - Order Received (after checkout completion),
++++ Additional filters to format the printed output.
+********/
+
+// (1) Printing the Billing Address on My Account
+
+add_filter( 'woocommerce_my_account_my_address_formatted_address', 'njengah_my_account_my_address_formatted_address', 10, 3 );
+
+function njengah_my_account_my_address_formatted_address( $fields, $customer_id, $type ) {
+
+  if ( $type == 'billing' ) {
+              $fields['vat'] = get_user_meta( $customer_id, 'billing_vat', true );
+  }
+  return $fields;
+}
+
+
+// (2) Checkout -- Order Received (printed after having completed checkout)
+
+add_filter( 'woocommerce_order_formatted_billing_address', 'njengah_add_vat_formatted_billing_address', 10, 2 );
+    
+function njengah_add_vat_formatted_billing_address( $fields, $order ) {
+
+            $fields['vat'] = get_post_meta($order->get_id(), 'billing_vat', true);
+
+            return $fields;
+
+}
+
+
+// Creating merger VAT variables for printing formatting
+
+add_filter( 'woocommerce_formatted_address_replacements', 'njengah_formatted_address_replacements', 10, 2 );
+
+function njengah_formatted_address_replacements( $address, $args ) {
+
+  $address['{vat}'] = '';
+  $address['{vat_upper}']= '';
+
+  if ( ! empty( $args['vat'] ) ) {
+              $address['{vat}'] = $args['vat'];
+              $address['{vat_upper}'] = strtoupper($args['vat']);
+  }
+
+  return $address;
+
+}
+
+
+//Defining the Spanish formatting to print the address, including VAT.
+
+add_filter( 'woocommerce_localisation_address_formats', 'njengah_localisation_address_format' );
+
+function njengah_localisation_address_format( $formats ) {
+
+  $formats['ES'] = "{name}\n{company}\n{vat_upper}\n{address_1}\n{address_2}\n{postcode} {city}\n{state}\n{country}";
+
+  return $formats;
+
+}
+
+
+/*****************************  ADMIN USER PROFILE PAGE  ****************************************/
+
+/***************
+
+Filter to add VAT Customer meta fields (user profile field on the billing address grouping)
+
+*****************/
+
+add_filter( 'woocommerce_customer_meta_fields', 'njengah_customer_meta_fields' );
+
+function njengah_customer_meta_fields( $fields ) {
+
+  $fields['billing']['fields']['billing_vat'] = array(
+
+              'label'       => __( 'NIP', 'njengah' )
+
+  );
+
+
+  return $fields;
+
+}
+
+
+/***************************  ADMIN ORDER PAGE  ****************************************/
+
+
+/********* 
+
+Filter to add VAT to the Edit Form on Order --  Admin page
+
+*********/
+
+add_filter( 'woocommerce_admin_billing_fields', 'njengah_admin_billing_fields' );
+
+function njengah_admin_billing_fields( $fields ) {
+
+  $fields['vat'] = array(
+              'label' => __( 'NIP', 'njengah' ),
+              'show'  => true
+  );
+
+  return $fields;
+
+}
+
+/****************
+
+Filter to copy the VAT field from User meta fields to the Order Admin form (after clicking the dedicated button on the admin page)
+
+******************/
+
+
+add_filter( 'woocommerce_found_customer_details', 'njengah_found_customer_details' );
+
+function njengah_found_customer_details( $customer_data ) {
+
+  $customer_data['billing_vat'] = get_user_meta( $_POST['user_id'], 'billing_vat', true );
+
+  return $customer_data;
+
 }
