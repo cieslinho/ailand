@@ -1062,6 +1062,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding: 1em 2em;
   width: 100%;
+  color: #000;
   font-size: 1.6rem;
   line-height: 19.2px;
   font-family: "600";
@@ -1110,7 +1111,7 @@ body {
   transition: background-color 0.3s;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 1em;
-  color: #000;
+  color: #000 !important;
   font-size: 1.6rem;
   line-height: 19.2px;
   font-family: "600";
@@ -1121,7 +1122,7 @@ body {
 .tabs .tab-docs a::before {
   position: relative;
   left: 0;
-  background-image: url("http://ailand.local/wp-content/uploads/2024/04/download.svg");
+  background-image: url("/wp-content/uploads/2024/04/download.svg");
   width: 24px;
   height: 24px;
   content: "";
@@ -1716,9 +1717,6 @@ body {
     line-height: 33.6px;
   }
 }
-.single-product .product.type-product .variations {
-  display: none !important;
-}
 .single-product .product.type-product .title-info,
 .single-product .product.type-product .price-info,
 .single-product .product.type-product .product-meta {
@@ -1788,6 +1786,35 @@ body {
 }
 .single-product .product.type-product .price-all {
   color: rgba(0, 0, 0, 0.75);
+}
+
+.woo-variation-swatches .variable-items-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  margin-block: 0.5em;
+  border-radius: 8px;
+  padding: 0.5em;
+}
+@media only screen and (min-width: 360px) {
+  .woo-variation-swatches .variable-items-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .woo-variation-swatches .variable-items-wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media only screen and (min-width: 1230px) {
+  .woo-variation-swatches .variable-items-wrapper {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
+
+table.variations th.label {
+  padding: 0.3em 0.6em;
+  font-size: 1.6rem;
 }
 
 .woocommerce-message,
@@ -2194,7 +2221,8 @@ a.woocommerce-privacy-policy-link {
   font-family: "600";
 }
 
-.input-radio {
+.input-radio,
+.woocommerce-form__input.woocommerce-form__input-checkbox {
   filter: grayscale(1);
 }
 
@@ -2295,4 +2323,86 @@ a.woocommerce-privacy-policy-link {
 #customer_details #billing_last_name_field {
   float: none !important;
   width: 100% !important;
+}
+
+.woocommerce-MyAccount-content strong,
+.woocommerce-MyAccount-content a,
+.woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-number strong,
+.woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-number a {
+  color: #000 !important;
+  font-family: "600";
+}
+
+.woocommerce-button.button.view {
+  color: #fff !important;
+}
+
+.woocommerce-OrderUpdate-meta.meta {
+  display: none;
+}
+
+.woocommerce-MyAccount-content h2 {
+  margin-block: 0.5em;
+}
+
+.woocommerce-address-fields__field-wrapper,
+.woocommerce-EditAccountForm.edit-account fieldset {
+  margin-bottom: 1em;
+}
+
+.woocommerce-EditAccountForm.edit-account fieldset {
+  border: unset !important;
+}
+.woocommerce-EditAccountForm.edit-account fieldset legend {
+  padding-top: 1em;
+  font-family: "600";
+}
+
+.woocommerce form.checkout_coupon,
+.woocommerce form.login,
+.woocommerce form.register {
+  border: unset !important;
+}
+
+.woocommerce-LostPassword.lost_password a {
+  color: #000 !important;
+}
+
+.shop-pagination {
+  display: none;
+}
+
+.woocommerce-pagination {
+  text-align: right !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  border: none !important;
+}
+@media only screen and (min-width: 768px) {
+  .woocommerce nav.woocommerce-pagination ul {
+    justify-content: flex-end;
+  }
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border: none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span {
+  border-radius: 8px;
+  color: #000;
+  font-family: "600";
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  border-radius: 8px;
+  background: unset;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }

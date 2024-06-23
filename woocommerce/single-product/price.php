@@ -15,6 +15,8 @@
  * @version 3.0.0
  */
 
+ 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -24,5 +26,5 @@ global $product;
 ?>
 <div class="price-info">
 <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
-<p class="product-info">Cena zależna od wybranej wysokości</p>
+<p class="product-info">Wybierz wysokość</p>
 </div>

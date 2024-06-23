@@ -12,6 +12,7 @@
 		border-top: 1px solid rgba($color: $black, $alpha: 8%);
 		padding: 1em 2em;
 		width: 100%;
+		color: $black;
 		font-size: 1.6rem;
 		line-height: 19.2px;
 		// background-color: $black;
@@ -71,7 +72,7 @@
 				transition: background-color 0.3s;
 				border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
 				padding: 1em;
-				color: $black;
+				color: $black !important;
 				font-size: 1.6rem;
 				line-height: 19.2px;
 				font-family: '600';
@@ -84,7 +85,7 @@
 					position: relative;
 					left: 0;
 
-					background-image: url('http://ailand.local/wp-content/uploads/2024/04/download.svg');
+					background-image: url('/wp-content/uploads/2024/04/download.svg');
 					width: 24px;
 					height: 24px;
 					content: '';

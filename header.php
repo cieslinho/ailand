@@ -55,11 +55,11 @@
         </a>
         <a class="nav__bottom-item" href="/koszyk/">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cart.svg" alt="">
-            Koszyk
+           
         </a>
         <a class="nav__bottom-item" href="/moje-konto/">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/account.svg" alt="">
-            Konto
+           Mojekonto
         </a>
         <btn class="nav__bottom-item nav__open">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/menu.svg" alt="">
@@ -90,7 +90,7 @@
             Koszyk</a>
         <a href="/moje-konto/" class="nav__link nav__shop">
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
-            Zaloguj się</a>
+            Moje konto</a>
     </div>
     </div>
     </nav>
