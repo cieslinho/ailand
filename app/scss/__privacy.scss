@@ -1,0 +1,23 @@
+.privacy {
+	.politykaPrywatnosci {
+		h2:first-child {
+			margin-bottom: 1em;
+		}
+
+		.pb-12 {
+			margin-top: 1em;
+		}
+
+		.lh166 {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			line-height: 180%;
+
+			ul li a {
+				color: $black;
+				font-family: '600';
+			}
+		}
+	}
+}

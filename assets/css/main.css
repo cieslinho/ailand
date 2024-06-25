@@ -1239,6 +1239,9 @@ body {
     line-height: 21.6px;
   }
 }
+.form__textarea {
+  resize: vertical !important;
+}
 .form__controls {
   display: flex;
   flex-direction: column;
@@ -2773,4 +2776,21 @@ a.woocommerce-privacy-policy-link {
   border-radius: 8px;
   background: unset;
   background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.privacy .politykaPrywatnosci h2:first-child {
+  margin-bottom: 1em;
+}
+.privacy .politykaPrywatnosci .pb-12 {
+  margin-top: 1em;
+}
+.privacy .politykaPrywatnosci .lh166 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  line-height: 180%;
+}
+.privacy .politykaPrywatnosci .lh166 ul li a {
+  color: #000;
+  font-family: "600";
 }

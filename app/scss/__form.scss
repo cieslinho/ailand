@@ -94,6 +94,10 @@
 		// }
 	}
 
+	&__textarea {
+		resize: vertical !important;
+	}
+
 	&__controls {
 		display: flex;
 		flex-direction: column;
