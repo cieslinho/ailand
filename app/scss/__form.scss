@@ -1,0 +1,181 @@
+.form {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8em;
+
+		input[type='text'],
+		input[type='number'],
+		input[type='email'],
+		input[type='url'],
+		input[type='tel'],
+		input[type='password'],
+		input[type='search'],
+		select,
+		textarea,
+		textarea.wp-editor-area,
+		form.mc4wp-form .mc4wp-form-fields input[type='email'],
+		.tourmaster-form-field input[type='text'],
+		.tourmaster-form-field input[type='email'],
+		.tourmaster-form-field input[type='password'],
+		.tourmaster-form-field textarea,
+		.tourmaster-form-field select,
+		.tourmaster-form-field.tourmaster-with-border input[type='text'],
+		.tourmaster-form-field.tourmaster-with-border input[type='email'],
+		.tourmaster-form-field.tourmaster-with-border input[type='password'],
+		.tourmaster-form-field.tourmaster-with-border textarea,
+		.tourmaster-form-field.tourmaster-with-border select,
+		.woocommerce table.cart td.actions .coupon .input-text,
+		.woocommerce #content table.cart td.actions .coupon .input-text,
+		.woocommerce-page table.cart td.actions .coupon .input-text,
+		.woocommerce-page #content table.cart td.actions .coupon .input-text,
+		#buddypress div.dir-search input[type='search'],
+		#buddypress div.dir-search input[type='text'],
+		#buddypress li.groups-members-search input[type='search'],
+		#buddypress li.groups-members-search input[type='text'],
+		#buddypress .standard-form input[type='color'],
+		#buddypress .standard-form input[type='date'],
+		#buddypress .standard-form input[type='datetime-local'],
+		#buddypress .standard-form input[type='datetime'],
+		#buddypress .standard-form input[type='email'],
+		#buddypress .standard-form input[type='month'],
+		#buddypress .standard-form input[type='number'],
+		#buddypress .standard-form input[type='password'],
+		#buddypress .standard-form input[type='range'],
+		#buddypress .standard-form input[type='search'],
+		#buddypress .standard-form input[type='tel'],
+		#buddypress .standard-form input[type='text'],
+		#buddypress .standard-form input[type='time'],
+		#buddypress .standard-form input[type='url'],
+		#buddypress .standard-form input[type='week'],
+		#buddypress .standard-form select,
+		#buddypress .standard-form textarea,
+		#give-recurring-form .form-row input[type='email'],
+		#give-recurring-form .form-row input[type='password'],
+		#give-recurring-form .form-row input[type='tel'],
+		#give-recurring-form .form-row input[type='text'],
+		#give-recurring-form .form-row input[type='url'],
+		#give-recurring-form .form-row select,
+		#give-recurring-form .form-row textarea,
+		form.give-form .form-row input[type='email'],
+		form.give-form .form-row input[type='password'],
+		form.give-form .form-row input[type='tel'],
+		form.give-form .form-row input[type='text'],
+		form.give-form .form-row input[type='url'],
+		form.give-form .form-row select,
+		form.give-form .form-row textarea,
+		form[id*='give-form'] .form-row input[type='email'],
+		form[id*='give-form'] .form-row input[type='password'],
+		form[id*='give-form'] .form-row input[type='tel'],
+		form[id*='give-form'] .form-row input[type='text'],
+		form[id*='give-form'] .form-row input[type='url'],
+		form[id*='give-form'] .form-row select,
+		form[id*='give-form'] .form-row textarea,
+		form[id*='give-form'] .give-donation-amount #give-amount,
+		form[id*='give-form'] .give-donation-amount #give-amount-text,
+		form[id*='give-form'] #give-final-total-wrap .give-final-total-amount,
+		form[id*='give-form'] .give-donation-amount .give-currency-symbol,
+		form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-before,
+		form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-after,
+		form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
+			border: 1px solid rgba($color: $black, $alpha: 8%);
+			width: 100%;
+			font-size: 1.4rem;
+			line-height: 16.8px;
+
+			@include respond(tablet) {
+				font-size: 1.8rem;
+				line-height: 21.6px;
+			}
+		}
+
+		// @include respond(tablet) {
+		// 	width: 50%;
+		// }
+	}
+
+	&__controls {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include respond(tablet) {
+			flex-direction: row;
+		}
+
+		.wpcf7-form-control-wrap {
+			width: 100%;
+		}
+	}
+
+	&__option {
+		display: flex;
+		justify-content: space-between;
+		margin-block: 1.5em;
+
+		@include respond(tablet) {
+			justify-content: flex-start;
+			gap: 1em;
+		}
+
+		.wpcf7-list-item {
+			filter: grayscale(1);
+			margin: 0 !important;
+			font-family: '600';
+		}
+	}
+
+	&__btn {
+		display: block;
+		cursor: pointer;
+		border-radius: 8px;
+		background-color: $black;
+		padding: 0.7em 1.4em;
+		width: 100%;
+		color: $white;
+		text-align: center;
+	}
+}
+
+.wpcf7-not-valid-tip {
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	font-size: 1.3rem;
+}
+
+.wpcf7-spinner {
+	margin: 0.5em auto !important;
+
+	@include respond(tablet) {
+		display: none;
+	}
+}
+
+.wpcf7-response-output {
+	margin: 0 !important;
+	padding: 0.7em 1.4em !important;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+	border: 1px solid $blood;
+	border-radius: 8px;
+	background-color: $blood;
+	color: $white;
+	font-size: 1.4rem;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+	border: 1px solid #46b450;
+	border-radius: 8px;
+	background-color: #46b450;
+	color: $white;
+	font-size: 1.4rem;
+}
+
+form[aria-label='Formularz kontaktowy'] {
+	@include respond(tablet) {
+		width: 50%;
+	}
+}

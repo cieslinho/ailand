@@ -5,6 +5,7 @@
 
 	&__swiper {
 		padding: 0 1em;
+		max-width: 1230px;
 	}
 
 	&__wrapper {
@@ -35,6 +36,24 @@
 			font-size: 1.2rem;
 			line-height: 14.4px;
 			font-family: '400';
+		}
+	}
+
+	&__next,
+	&__prev {
+		transition: background-color 0.3s;
+		border-radius: 8px;
+		background-color: rgba($color: $black, $alpha: 0.2);
+		width: 35px;
+		height: 40px;
+		color: $white;
+
+		&:hover {
+			background-color: rgba($color: $black, $alpha: 0.8);
+		}
+
+		&::after {
+			font-size: 1.8rem;
 		}
 	}
 }

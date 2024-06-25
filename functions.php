@@ -413,3 +413,6 @@ function njengah_found_customer_details( $customer_data ) {
 
 }
 
+// cf7 br / p
+
+  add_filter( 'wpcf7_autop_or_not', '__return_false' );

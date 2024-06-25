@@ -1,0 +1,66 @@
+.contact {
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+
+		@include respond(tablet) {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include respond(desktop) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+
+		@include respond(tablet) {
+			gap: 0.8em;
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+
+			@include respond(tablet) {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		line-height: 22.4px;
+		font-family: '600';
+
+		@include respond(tablet) {
+			font-size: 2.4rem;
+			line-height: 33.6px;
+		}
+	}
+
+	&__link {
+		color: rgba($color: $black, $alpha: 75%);
+		font-size: 1.6rem;
+		line-height: 22.4px;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+			line-height: 25.2px;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		// align-items: center;
+	}
+}

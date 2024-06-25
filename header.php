@@ -21,6 +21,11 @@
 
 <body <?php body_class();?>>
 <nav class="nav nav--mobile">
+<div class="nav__top nav__top-visible">
+<a href="/" class="nav__logo">   
+<img class="logo-mobile" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo-mobile.png" alt="AL-LAND Opole Logo">
+</a>
+</div> 
     <div class="nav__navbar">
     <div class="nav__top">
 <a href="/" class="nav__logo">   
@@ -55,11 +60,11 @@
         </a>
         <a class="nav__bottom-item" href="/koszyk/">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cart.svg" alt="">
-           
+           Koszyk
         </a>
         <a class="nav__bottom-item" href="/moje-konto/">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/account.svg" alt="">
-           Mojekonto
+           Moje konto
         </a>
         <btn class="nav__bottom-item nav__open">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/menu.svg" alt="">

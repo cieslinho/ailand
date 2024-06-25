@@ -1,5 +1,6 @@
 const menu = document.querySelector('.nav__navbar')
 const navBottom = document.querySelector('.nav__bottom')
+const navTop = document.querySelector('.nav__top-visible')
 const btnOpen = document.querySelector('.nav__open')
 const closeBtn = document.querySelector('.nav__close')
 const subItem = document.querySelector('#menu-item-29')
@@ -33,6 +34,23 @@ window.addEventListener('scroll', function () {
 	// update previous scroll position
 	prevScrollPos = currentScrollPos
 })
+let prevScrollUp = window.pageYOffset
+
+window.addEventListener('scroll', function () {
+	// current scroll position
+	const currentScrollUp = window.pageYOffset
+
+	if (prevScrollUp > currentScrollUp) {
+		// user has scrolled up
+		navTop.classList.remove('active')
+	} else {
+		// user has scrolled down
+		navTop.classList.add('active')
+	}
+
+	// update previous scroll position
+	prevScrollUp = currentScrollUp
+})
 
 const openNav = () => {
 	menu.classList.add('active')
@@ -60,14 +78,17 @@ const swiper = new Swiper('.mySwiper', {
 		delay: 2500,
 		// disableOnInteraction: true,
 	},
+	navigation: {
+		nextEl: '.partners__next',
+		prevEl: '.partners__prev',
+	},
 	breakpoints: {
 		992: {
-			slidesPerView: 11,
+			slidesPerView: 7,
 			spaceBetween: 50,
 		},
 	},
 })
-
 var prosSwiper = new Swiper('.pros__swiper', {
 	pagination: {
 		el: '.pros__pagination',
@@ -161,6 +182,7 @@ var supportSwiper = new Swiper('.solutions__swiper', {
 		},
 	},
 })
+
 var supportSwiper = new Swiper('.example__swiper', {
 	slidesPerView: 1,
 	spaceBetween: 20,
