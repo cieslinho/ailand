@@ -15,7 +15,9 @@
         </div>
     </a>
     <?php endforeach; ?>
-    </div>
+</div>
+<div class="swiper-button-next partners__next"></div>
+<div class="swiper-button-prev partners__prev"></div>
     </div>
 </div>
 </section>

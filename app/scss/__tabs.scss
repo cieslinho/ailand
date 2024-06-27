@@ -102,3 +102,81 @@
 		display: block;
 	}
 }
+
+.tabs-download {
+	.section-title {
+		text-align: left;
+	}
+
+	.subTab {
+		border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+
+		&:last-child {
+			border-bottom: unset;
+		}
+
+		&__link {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+			padding: 1em 2em;
+			padding-left: 3.5em;
+			width: 100%;
+			color: $black;
+			font-family: '600';
+
+			&:last-child {
+				border-bottom: unset;
+			}
+
+			svg {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+
+	.subTabs {
+		display: none;
+	}
+
+	.subTabs.active {
+		display: block;
+	}
+
+	.subTab__files {
+		display: none;
+
+		&-forms {
+			.subTab__link {
+				padding-left: 2.5em;
+			}
+		}
+	}
+
+	.subTab__files.active {
+		display: block;
+	}
+
+	.sub-tab {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid rgba($color: $black, $alpha: 8%);
+		padding: 1em 2em;
+		padding-left: 3em;
+		width: 100%;
+		color: $black;
+		font-family: '600';
+
+		svg {
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	.sub-tab.active {
+		background-color: rgba($color: $gray, $alpha: 55%);
+	}
+}
