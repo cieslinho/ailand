@@ -1,4 +1,8 @@
 .privacy {
+	@include respond(tablet) {
+		margin-top: 2em;
+	}
+
 	.politykaPrywatnosci {
 		h2:first-child {
 			margin-bottom: 1em;
@@ -17,6 +21,26 @@
 			ul li a {
 				color: $black;
 				font-family: '600';
+			}
+
+			ol {
+				margin-block: 0.5em;
+				padding-left: 2em;
+
+				li {
+					font-family: '500';
+					list-style: inherit;
+				}
+			}
+
+			ul {
+				margin-block: 0.5em;
+				padding-left: 2em;
+
+				li {
+					font-family: '500';
+					list-style-type: inherit;
+				}
 			}
 		}
 	}

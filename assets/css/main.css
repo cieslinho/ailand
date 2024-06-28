@@ -956,6 +956,78 @@ body {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .rules {
+    margin-top: 2em;
+  }
+}
+.rules h2:first-child {
+  margin-bottom: 1em;
+}
+.rules h2 {
+  margin-bottom: 0.5em;
+}
+.rules__box {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  line-height: 180%;
+}
+.rules__box ul li a {
+  color: #000;
+  font-family: "600";
+}
+.rules__box ol {
+  margin-block: 0.5em;
+  padding-left: 2em;
+}
+.rules__box ol li {
+  font-family: "500";
+  list-style: inherit;
+}
+.rules__box ol li a {
+  color: #000;
+  text-decoration: underline;
+}
+.rules__box ol li ol li {
+  list-style: lower-alpha;
+}
+.rules__box ol li ol li a {
+  color: #000;
+  text-decoration: underline;
+}
+.rules__box ul {
+  margin-block: 0.5em;
+  padding-left: 2em;
+}
+.rules__box ul li {
+  font-family: "500";
+  list-style-type: inherit;
+}
+.rules__box ul li a {
+  color: #000;
+  text-decoration: underline;
+}
+.rules__btn {
+  display: block;
+  margin: 1em auto;
+  border-radius: 8px;
+  background-color: #000;
+  padding: 1em 1em;
+  width: 100%;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: "600";
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .rules__btn {
+    padding: 1em 2em;
+    max-width: 450px;
+    font-size: 1.8rem;
+  }
+}
+
 .footer {
   padding-block: 1.7em;
   background-color: #231f20;
@@ -2839,6 +2911,11 @@ a.woocommerce-privacy-policy-link {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
+@media only screen and (min-width: 768px) {
+  .privacy {
+    margin-top: 2em;
+  }
+}
 .privacy .politykaPrywatnosci h2:first-child {
   margin-bottom: 1em;
 }
@@ -2854,4 +2931,20 @@ a.woocommerce-privacy-policy-link {
 .privacy .politykaPrywatnosci .lh166 ul li a {
   color: #000;
   font-family: "600";
+}
+.privacy .politykaPrywatnosci .lh166 ol {
+  margin-block: 0.5em;
+  padding-left: 2em;
+}
+.privacy .politykaPrywatnosci .lh166 ol li {
+  font-family: "500";
+  list-style: inherit;
+}
+.privacy .politykaPrywatnosci .lh166 ul {
+  margin-block: 0.5em;
+  padding-left: 2em;
+}
+.privacy .politykaPrywatnosci .lh166 ul li {
+  font-family: "500";
+  list-style-type: inherit;
 }

@@ -1,0 +1,84 @@
+.rules {
+	@include respond(tablet) {
+		margin-top: 2em;
+	}
+
+	h2:first-child {
+		margin-bottom: 1em;
+	}
+
+	h2 {
+		margin-bottom: 0.5em;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		line-height: 180%;
+
+		ul li a {
+			color: $black;
+			font-family: '600';
+		}
+
+		ol {
+			margin-block: 0.5em;
+			padding-left: 2em;
+
+			li {
+				font-family: '500';
+				list-style: inherit;
+
+				a {
+					color: $black;
+					text-decoration: underline;
+				}
+
+				ol li {
+					list-style: lower-alpha;
+
+					a {
+						color: $black;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		ul {
+			margin-block: 0.5em;
+			padding-left: 2em;
+
+			li {
+				font-family: '500';
+				list-style-type: inherit;
+
+				a {
+					color: $black;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	&__btn {
+		display: block;
+		margin: 1em auto;
+		border-radius: 8px;
+		background-color: $black;
+		padding: 1em 1em;
+		width: 100%;
+
+		color: $white;
+		font-size: 1.6rem;
+		font-family: '600';
+		text-align: center;
+
+		@include respond(tablet) {
+			padding: 1em 2em;
+			max-width: 450px;
+			font-size: 1.8rem;
+		}
+	}
+}
