@@ -39,7 +39,7 @@
                     Sprzedawcą.</li>
                 <li>REGULAMIN - niniejszy regulamin Sklepu.</li>
                 <li>SKLEP - Sklep internetowy Usługodawcy działający pod adresem www.al-land.com.pl</li>
-                <li>SPRZEDAWCA, USŁUGODAWCA – AL-LAND OPOLE Sp. z o.o.</li>
+                <li>SPRZEDAWCA, USŁUGODAWCA – AL-LAND OPOLE Sp. z o.o., NIP: 8982222225, Siedziba: J.Cygana 4, Opole 45-131</li>
                 <li>UMOWA SPRZEDAŻY – Umowa Sprzedaży Produktu zawarta między Klientem, a Sprzedawcą za pośrednictwem
                     Sklepu.</li>
                 <li>ZAMÓWIENIE - oświadczenie woli Klienta stanowiące ofertę zawarcia Umowy Sprzedaży Produktu ze
@@ -286,6 +286,6 @@
                         href="http://ec.europa.eu/consumers/odr/">http://ec.europa.eu/consumers/odr/</a>.</li>
             </ol>
         </div>
-        <a href="" class="rules__btn">Pobierz regulamin w PDF</a>
+        <a href="/wp-content/uploads/2024/06/regulamin-sklepu-alland.pdf" class="rules__btn">Pobierz regulamin w PDF</a>
     </div>
 </section>

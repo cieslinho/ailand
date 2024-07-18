@@ -27,4 +27,14 @@
 		line-height: 19.6px;
 		font-family: '500';
 	}
+
+	&__img {
+		width: 100%;
+		height: 280px;
+		object-fit: cover;
+
+		@include respond(tablet) {
+			height: 230px;
+		}
+	}
 }

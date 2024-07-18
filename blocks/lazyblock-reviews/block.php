@@ -14,13 +14,20 @@
                     </p>
                 </div>
                 <div class="reviews__box reviews__box--mobile reviews__box--desktop swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/filplast.png" alt=""
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/drutex.png" alt=""
                         class="reviews__img">
                     <p class="reviews__description">
-                        “Współpraca układa się dobrze, firma AL-LAND OPOLE Sp. z.o.o. staje na wysokości zadania i stara
-                        sprostać się naszym wymaganiom. “
+                    “Kontakt z firmą jest bardzo dobry, tak jak i jakość produktów. Termin realizacji zamówień odpowiada naszej firmie, gdyż jest szybki.”
                     </p>
                 </div>
+                <div class="reviews__box reviews__box--mobile reviews__box--desktop swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/allwindows.png" alt=""
+                        class="reviews__img">
+                    <p class="reviews__description">
+                    “Oceniam pracę z Waszą firmą na duży plus. Zawsze dobra współpraca i bezwiększych problemów.”
+                    </p>
+                </div>
+             
                 <div class="reviews__box reviews__box--mobile reviews__box--desktop swiper-slide">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/novobudowa.png" alt=""
                         class="reviews__img">
@@ -28,28 +35,7 @@
                         “Stabilnie, rzetelnie, bez zastrzeżeń. “
                     </p>
                 </div>
-                <div class="reviews__box reviews__box--mobile reviews__box--desktop swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/filplast.png" alt=""
-                        class="reviews__img">
-                    <p class="reviews__description">
-                        “Współpraca układa się dobrze, firma AL-LAND OPOLE Sp. z.o.o. staje na wysokości zadania i stara
-                        sprostać się naszym wymaganiom. “
-                    </p>
-                </div>
-                <div class="reviews__box reviews__box--mobile reviews__box--desktop swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/novobudowa.png" alt=""
-                        class="reviews__img">
-                    <p class="reviews__description">
-                        “Stabilnie, rzetelnie, bez zastrzeżeń. “
-                    </p>
-                </div>
-                <div class="reviews__box reviews__box--mobile reviews__box--desktop swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/novobudowa.png" alt=""
-                        class="reviews__img">
-                    <p class="reviews__description">
-                        “Stabilnie, rzetelnie, bez zastrzeżeń. “
-                    </p>
-                </div>
+          
 
             </div>
         </div>

@@ -10,7 +10,7 @@
 	<h2 class="pb-12"><strong>1. Informacje ogólne</strong></h2>
 	<ol>
 	<li>Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url: <b>al-land.com.pl</b></li>
-	<li>Operatorem serwisu oraz Administratorem danych osobowych jest: Slawomir Jakubowski Józefa Cygana 4, 45-131, Opole</li>
+	<li>Operatorem serwisu oraz Administratorem danych osobowych jest: AL-LAND OPOLE Sp. z o.o., NIP: 8982222225 Józefa Cygana 4, 45-131, Opole</li>
 	
 	<li>Adres kontaktowy poczty elektronicznej operatora: opole@al-land.com.pl</li>
 	

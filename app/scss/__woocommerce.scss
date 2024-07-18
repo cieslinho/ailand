@@ -432,6 +432,31 @@ table.variations {
 	}
 }
 
+.woocommerce-button.button.pay {
+	background-color: #46b450;
+	color: #fff !important;
+
+	&:hover {
+		color: $black !important;
+	}
+}
+.woocommerce-button.button.cancel {
+	background-color: #ed202a;
+	color: #fff !important;
+
+	&:hover {
+		color: $black !important;
+	}
+}
+.woocommerce-button.button.view {
+	margin: 0 0.5em;
+	color: #fff !important;
+
+	&:hover {
+		color: $black !important;
+	}
+}
+
 .theme-aiLand table th {
 	background-color: $black;
 	color: $white;
@@ -749,12 +774,66 @@ form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
 #add_payment_method #payment ul.payment_methods,
 .woocommerce-cart #payment ul.payment_methods,
 .woocommerce-checkout #payment ul.payment_methods {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(1, 1fr);
+	justify-content: center;
+	// align-items: center;
+	gap: 1em;
 	margin: 0;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #cfc8d8;
 	padding: 1em;
 	list-style: none outside;
 	text-align: left;
+
+	// @include respond(mobile) {
+	// 	grid-template-columns: repeat(2, 1fr);
+	// }
+
+	@include respond(tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include respond(desktop) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	&:before {
+		display: none;
+	}
+
+	.payment_box.payment_method_przelewy24 {
+		display: none !important;
+	}
+
+	li {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 8px;
+		background-color: rgba($color: $black, $alpha: 0.05);
+
+		padding: 1em 2em;
+
+		input {
+			// display: none;
+			margin: 0 !important;
+		}
+
+		label {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5em;
+
+			img {
+				margin: 0 !important;
+				max-width: 110px;
+			}
+		}
+	}
 }
 
 #add_payment_method #payment,
@@ -981,4 +1060,38 @@ a.woocommerce-privacy-policy-link {
 	border-radius: 8px;
 	background: unset;
 	background-color: rgba($color: $black, $alpha: 0.05) !important;
+}
+
+#p24-bank-grid,
+.morePayMethods {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#p24-bank-grid {
+	margin-bottom: 1em;
+}
+
+#przelewy_payment_form {
+	input.button.alt,
+	a.button.cancel {
+		margin-block: 1em;
+		background-color: $black !important;
+
+		&:hover {
+			background-color: $black !important;
+			color: $white;
+		}
+	}
+
+	p label input + a {
+		color: $black;
+		font-weight: 700;
+	}
+}
+
+.woocommerce-terms-and-conditions-link {
+	color: $black !important;
 }

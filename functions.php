@@ -413,6 +413,13 @@ function njengah_found_customer_details( $customer_data ) {
 
 }
 
+add_filter( 'woocommerce_order_get_formatted_billing_address', function( $address, $raw_address, $order ) {
+  if ( ! empty( $vat_number = $order->get_meta( '_billing_vat' ) ) ) {
+      $address .= sprintf( '<br>%s: %s', __( 'VAT number', 'woocommerce' ), $vat_number );
+  }
+  return $address;
+}, 10, 3 );
+
 // cf7 br / p
 
   add_filter( 'wpcf7_autop_or_not', '__return_false' );

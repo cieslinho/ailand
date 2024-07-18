@@ -1429,6 +1429,16 @@ body {
   line-height: 19.6px;
   font-family: "500";
 }
+.support__img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+@media only screen and (min-width: 768px) {
+  .support__img {
+    height: 230px;
+  }
+}
 
 .category__boxes {
   display: flex;
@@ -1664,6 +1674,13 @@ body {
   width: 100%;
 }
 
+.example {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.example:last-child {
+  padding-bottom: 1em;
+}
 .example__box {
   display: flex;
   flex-direction: column;
@@ -2396,6 +2413,30 @@ table.variations th.label {
   color: #000;
 }
 
+.woocommerce-button.button.pay {
+  background-color: #46b450;
+  color: #fff !important;
+}
+.woocommerce-button.button.pay:hover {
+  color: #000 !important;
+}
+
+.woocommerce-button.button.cancel {
+  background-color: #ed202a;
+  color: #fff !important;
+}
+.woocommerce-button.button.cancel:hover {
+  color: #000 !important;
+}
+
+.woocommerce-button.button.view {
+  margin: 0 0.5em;
+  color: #fff !important;
+}
+.woocommerce-button.button.view:hover {
+  color: #000 !important;
+}
+
 .theme-aiLand table th {
   background-color: #000;
   color: #fff;
@@ -2686,12 +2727,72 @@ form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
 #add_payment_method #payment ul.payment_methods,
 .woocommerce-cart #payment ul.payment_methods,
 .woocommerce-checkout #payment ul.payment_methods {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  gap: 1em;
   margin: 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #cfc8d8;
   padding: 1em;
   list-style: none outside;
   text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  #add_payment_method #payment ul.payment_methods,
+  .woocommerce-cart #payment ul.payment_methods,
+  .woocommerce-checkout #payment ul.payment_methods {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1230px) {
+  #add_payment_method #payment ul.payment_methods,
+  .woocommerce-cart #payment ul.payment_methods,
+  .woocommerce-checkout #payment ul.payment_methods {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#add_payment_method #payment ul.payment_methods:before,
+.woocommerce-cart #payment ul.payment_methods:before,
+.woocommerce-checkout #payment ul.payment_methods:before {
+  display: none;
+}
+#add_payment_method #payment ul.payment_methods .payment_box.payment_method_przelewy24,
+.woocommerce-cart #payment ul.payment_methods .payment_box.payment_method_przelewy24,
+.woocommerce-checkout #payment ul.payment_methods .payment_box.payment_method_przelewy24 {
+  display: none !important;
+}
+#add_payment_method #payment ul.payment_methods li,
+.woocommerce-cart #payment ul.payment_methods li,
+.woocommerce-checkout #payment ul.payment_methods li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1em 2em;
+}
+#add_payment_method #payment ul.payment_methods li input,
+.woocommerce-cart #payment ul.payment_methods li input,
+.woocommerce-checkout #payment ul.payment_methods li input {
+  margin: 0 !important;
+}
+#add_payment_method #payment ul.payment_methods li label,
+.woocommerce-cart #payment ul.payment_methods li label,
+.woocommerce-checkout #payment ul.payment_methods li label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+#add_payment_method #payment ul.payment_methods li label img,
+.woocommerce-cart #payment ul.payment_methods li label img,
+.woocommerce-checkout #payment ul.payment_methods li label img {
+  margin: 0 !important;
+  max-width: 110px;
 }
 
 #add_payment_method #payment,
@@ -2909,6 +3010,37 @@ a.woocommerce-privacy-policy-link {
   border-radius: 8px;
   background: unset;
   background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+#p24-bank-grid,
+.morePayMethods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#p24-bank-grid {
+  margin-bottom: 1em;
+}
+
+#przelewy_payment_form input.button.alt,
+#przelewy_payment_form a.button.cancel {
+  margin-block: 1em;
+  background-color: #000 !important;
+}
+#przelewy_payment_form input.button.alt:hover,
+#przelewy_payment_form a.button.cancel:hover {
+  background-color: #000 !important;
+  color: #fff;
+}
+#przelewy_payment_form p label input + a {
+  color: #000;
+  font-weight: 700;
+}
+
+.woocommerce-terms-and-conditions-link {
+  color: #000 !important;
 }
 
 @media only screen and (min-width: 768px) {
