@@ -26,10 +26,11 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		// z-index: 200;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		content: '';
+		// content: '';
 	}
 
 	&__texts {
@@ -110,6 +111,41 @@
 
 		@include respond(tablet) {
 			order: 0;
+		}
+	}
+}
+
+.video-block {
+	section {
+		padding-top: 2em;
+		padding-bottom: 4em;
+	}
+
+	h2 {
+		margin-bottom: 0;
+		font-size: 1.6rem;
+		line-height: 22.4px;
+		font-family: '600';
+
+		@include respond(tablet) {
+			font-size: 2.4rem;
+			line-height: 33.6px;
+		}
+	}
+
+	.section-video {
+		@include respond(tablet) {
+			max-width: 630px;
+			height: 473px;
+			object-fit: cover;
+		}
+	}
+
+	.section-boxes {
+		gap: 1em;
+
+		@include respond(tablet) {
+			gap: 4em;
 		}
 	}
 }
