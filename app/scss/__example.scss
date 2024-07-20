@@ -60,3 +60,56 @@
 		}
 	}
 }
+
+.realization-block {
+	// display: none;
+
+	section {
+		padding-bottom: 1em;
+	}
+
+	.section-boxes {
+		gap: 1em;
+
+		@include respond(tablet) {
+			gap: 4em;
+		}
+	}
+
+	.section-img {
+		// max-width: 630px;
+		@include respond(tablet) {
+			max-width: 630px;
+			height: 473px;
+			object-fit: cover;
+		}
+	}
+
+	.section-texts {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	h2 {
+		margin-bottom: 0;
+		font-size: 1.6rem;
+		line-height: 22.4px;
+		font-family: '600';
+
+		@include respond(tablet) {
+			font-size: 2.4rem;
+			line-height: 33.6px;
+		}
+	}
+}
+
+.order-reverse-mobile {
+	.section-left {
+		order: 1;
+
+		@include respond(tablet) {
+			order: 0;
+		}
+	}
+}

@@ -121,7 +121,7 @@
 
 .section-img {
 	width: 100%;
-	max-width: 328px;
+	// max-width: 328px;
 
 	@include respond(tablet) {
 		max-width: 622px;

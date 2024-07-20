@@ -415,7 +415,7 @@ function njengah_found_customer_details( $customer_data ) {
 
 add_filter( 'woocommerce_order_get_formatted_billing_address', function( $address, $raw_address, $order ) {
   if ( ! empty( $vat_number = $order->get_meta( '_billing_vat' ) ) ) {
-      $address .= sprintf( '<br>%s: %s', __( 'VAT number', 'woocommerce' ), $vat_number );
+      $address .= sprintf( '<br>%s: %s', __( 'NIP', 'woocommerce' ), $vat_number );
   }
   return $address;
 }, 10, 3 );
@@ -435,3 +435,18 @@ function admin_enqueue_scripts_callback(){
     wp_enqueue_script( 'select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', 'jquery', '4.1.0-rc.0');
 
 }
+
+/**
+ * @snippet       Prices Incl + Excl Tax | WooCommerce Shop
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 7
+ * @community     https://businessbloomer.com/club/
+ */
+ 
+//  add_filter( 'woocommerce_get_price_suffix', 'bbloomer_add_price_suffix_price_inc_tax', 99, 4 );
+   
+//  function bbloomer_add_price_suffix_price_inc_tax( $suffix, $product, $price, $qty ){
+//      $suffix = ' <small>bez VAT</small>  (' . wc_price( wc_get_price_including_tax( $product ) ) . ' <small>z VAT)</small>';
+//      return $suffix;
+//  }

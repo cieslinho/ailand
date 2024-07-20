@@ -24,7 +24,7 @@ function liveReload(done) {
 		// server: {
 		//     baseDir: config.dist.base
 		// },
-		proxy: 'http://alland.local',
+		proxy: 'http://ailand.local',
 	})
 	done()
 }
