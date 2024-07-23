@@ -55,6 +55,35 @@
 			font-size: 1.8rem;
 			line-height: 25.2px;
 		}
+
+		&-link {
+			display: inline-block;
+			position: relative;
+			margin-block: 0.3em;
+			border-bottom: 1px solid transparent;
+			font-size: 1.4rem;
+
+			&::after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: all 0.5s;
+				background-color: rgba($color: $black, $alpha: 75%);
+				width: 0%;
+				height: 1px;
+				content: '';
+			}
+
+			@include respond(tablet) {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	&__link-link:hover {
+		&::after {
+			width: 100%;
+		}
 	}
 
 	&__box {
@@ -63,4 +92,13 @@
 		gap: 0.5em;
 		// align-items: center;
 	}
+
+	&__subtitle {
+		font-family: '600';
+	}
+
+	// &__bottom {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// }
 }
