@@ -30,21 +30,21 @@
         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/filplast.png" alt="Allwindows Partner" class="partners__slide ">
         </div>
-        <div class="partners__box swiper-slide">
+<!--         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kapica.png" alt="Allwindows Partner" class="partners__slide ">
-        </div>
-        <div class="partners__box swiper-slide">
+        </div> -->
+<!--         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/komsta.png" alt="Allwindows Partner" class="partners__slide ">
-        </div>
+        </div> -->
         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/novobudowa.png" alt="Allwindows Partner" class="partners__slide ">
         </div>
         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/opal.png" alt="Allwindows Partner" class="partners__slide ">
         </div>
-        <div class="partners__box swiper-slide">
+<!--         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/prestige.png" alt="Allwindows Partner" class="partners__slide ">
-        </div>
+        </div> -->
         <div class="partners__box swiper-slide">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sigo.png" alt="Allwindows Partner" class="partners__slide ">
         </div>

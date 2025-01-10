@@ -2330,6 +2330,10 @@ body {
   background-color: #000;
 }
 .single-product .product.type-product .summary.entry-summary .quantity {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+  gap: 1em;
   margin-bottom: 1em;
 }
 .single-product .product.type-product .summary.entry-summary .quantity input {
@@ -2337,6 +2341,10 @@ body {
   border-radius: 8px;
   padding: 0.5em 1em;
   width: 100%;
+}
+.single-product .product.type-product .summary.entry-summary .quantity__label {
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 .single-product .product.type-product .product_title.entry-title {
   font-size: 2rem;
